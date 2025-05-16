@@ -36,6 +36,32 @@ public:
         other.size_ = other.capacity_ = 0;
     }
 
+    // copy operatorius
+    Vector &operator=(const Vector &other)
+    {
+        if (this != &other)
+        {
+            Vector tmp(other);
+            swap(tmp);
+        }
+        return *this;
+    }
+
+    // move operatorius
+    Vector &operator=(Vector &&other) noexcept
+    {
+        if (this != &other)
+        {
+            delete[] data_;
+            data_ = other.data_;
+            size_ = other.size_;
+            capacity_ = other.capacity_;
+            other.data_ = nullptr;
+            other.size_ = other.capacity_ = 0;
+        }
+        return *this;
+    }
+
     // destruktorius
     ~Vector()
     {
