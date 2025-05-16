@@ -119,6 +119,17 @@ public:
         size_ = 0;
     }
 
+    // getteriai
+    size_type size() const noexcept { return size_; }
+    size_type capacity() const noexcept { return capacity_; }
+
+    // patikrinti, ar vektorius tuscias
+    bool empty() const noexcept { return size_ == 0; }
+
+    // idx-ojo nario pasiekimas netikrinant 'out_of_range'
+    T &operator[](size_type idx) { return data_[idx]; }
+    const T &operator[](size_type idx) const noexcept { return data_[idx]; }
+
 private:
     void grow()
     {
