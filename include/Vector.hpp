@@ -16,6 +16,26 @@ public:
     Vector() noexcept
         : data_(nullptr), size_(0), capacity_(0) {}
 
+    // copy konstruktorius
+    Vector(const Vector &other)
+        : data_(nullptr), size_(0), capacity_(0)
+    {
+        if (other.size_)
+        {
+            data_ = new T[other.size_];
+            std::copy(other.data_, other.data_ + other.size_, data_);
+            size_ = capacity_ = other.size_;
+        }
+    }
+
+    // move konstruktorius
+    Vector(Vector &&other) noexcept
+        : data_(other.data_), size_(other.size_), capacity_(other.capacity_)
+    {
+        other.data_ = nullptr;
+        other.size_ = other.capacity_ = 0;
+    }
+
     // destruktorius
     ~Vector()
     {
@@ -27,7 +47,3 @@ private:
     size_type size_;
     size_type capacity_;
 };
-
-#ifdef BUILDING_VECTOR
-#include "Vector-inl.hpp"
-#endif
