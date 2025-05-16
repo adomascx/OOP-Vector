@@ -68,6 +68,41 @@ public:
         delete[] data_;
     }
 
+    // padidinti Vector konteinerio talpa
+    void reserve(size_type new_cap)
+    {
+        if (new_cap <= capacity_)
+            return;
+        T *new_data = new T[new_cap];
+        for (size_type i = 0; i < size_; ++i)
+            new_data[i] = std::move(data_[i]);
+        delete[] data_;
+        data_ = new_data;
+        capacity_ = new_cap;
+    }
+
+    // pakeisti konteinerio dydi (sumazinti/padidinti)
+    void resize(size_type count)
+    {
+        if (count < size_)
+        {
+            size_ = count;
+        }
+        else if (count > size_)
+        {
+            reserve(count);
+            for (size_type i = size_; i < count; ++i)
+                data_[i] = T();
+            size_ = count;
+        }
+    }
+
+    // Istrinti konteinerio duomenis
+    void clear() noexcept
+    {
+        size_ = 0;
+    }
+
 private:
     void grow()
     {
