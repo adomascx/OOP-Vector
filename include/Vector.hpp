@@ -43,6 +43,19 @@ public:
     }
 
 private:
+    void grow()
+    {
+        size_type new_cap = capacity_ ? capacity_ * 2 : 1;
+        reserve(new_cap);
+    }
+
+    void swap(Vector &other) noexcept
+    {
+        std::swap(data_, other.data_);
+        std::swap(size_, other.size_);
+        std::swap(capacity_, other.capacity_);
+    }
+
     T *data_;
     size_type size_;
     size_type capacity_;
