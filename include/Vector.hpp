@@ -68,6 +68,22 @@ public:
         delete[] data_;
     }
 
+    // push_back implementacija
+    void push_back(const T &value)
+    {
+        if (size_ >= capacity_)
+            grow();
+        data_[size_++] = value;
+    }
+
+    // pop_back implementacija
+    void pop_back()
+    {
+        if (size_ == 0)
+            throw std::out_of_range("pop_back from empty Vector");
+        --size_;
+    }
+
     // padidinti Vector konteinerio talpa
     void reserve(size_type new_cap)
     {
