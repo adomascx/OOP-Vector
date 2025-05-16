@@ -1,11 +1,21 @@
+/**
+ * @file Vector.hpp
+ * @brief Paprasta dinaminio masyvo (vektoriaus) implementacija
+ *
+ * @tparam T elemento tipas
+ */
 #pragma once
-
 #include "export.h"
 #include <cstddef>
 #include <stdexcept>
 #include <utility>
 #include <algorithm>
 
+/**
+ * @brief Dinaminio masyvo (vektoriaus) klasė
+ *
+ * @tparam T elemento tipas
+ */
 template <typename T>
 class VECTOR_API Vector
 {
