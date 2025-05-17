@@ -1,10 +1,11 @@
 #define CATCH_CONFIG_MAIN
 #include "catch_amalgamated.hpp"
 #include "Vector.hpp"
+using custm::vector;
 
 TEST_CASE("Default constructor creates empty vector", "[constructor]")
 {
-    Vector<int> v;
+    vector<int> v;
     REQUIRE(v.size() == 0);
     REQUIRE(v.capacity() == 0);
     REQUIRE(v.empty());
@@ -12,10 +13,10 @@ TEST_CASE("Default constructor creates empty vector", "[constructor]")
 
 TEST_CASE("copy constructor makes deep copy", "[copy_constructor]")
 {
-    Vector<int> v;
+    vector<int> v;
     v.push_back(1);
     v.push_back(2);
-    Vector<int> copy(v);
+    vector<int> copy(v);
     REQUIRE(copy.size() == v.size());
     REQUIRE(copy[0] == 1);
     REQUIRE(copy[1] == 2);
@@ -26,10 +27,10 @@ TEST_CASE("copy constructor makes deep copy", "[copy_constructor]")
 
 TEST_CASE("move constructor transfers ownership", "[move_constructor]")
 {
-    Vector<int> v;
+    vector<int> v;
     v.push_back(7);
     v.push_back(8);
-    Vector<int> m(std::move(v));
+    vector<int> m(std::move(v));
     REQUIRE(m.size() == 2);
     REQUIRE(v.size() == 0);
     REQUIRE(m[0] == 7);
@@ -38,10 +39,10 @@ TEST_CASE("move constructor transfers ownership", "[move_constructor]")
 
 TEST_CASE("copy assignment makes deep copy", "[copy_assignment]")
 {
-    Vector<int> v;
+    vector<int> v;
     v.push_back(5);
     v.push_back(6);
-    Vector<int> a;
+    vector<int> a;
     a = v;
     REQUIRE(a.size() == v.size());
     REQUIRE(a[0] == 5);
@@ -52,10 +53,10 @@ TEST_CASE("copy assignment makes deep copy", "[copy_assignment]")
 
 TEST_CASE("move assignment transfers ownership", "[move_assignment]")
 {
-    Vector<int> v;
+    vector<int> v;
     v.push_back(9);
     v.push_back(10);
-    Vector<int> a;
+    vector<int> a;
     a = std::move(v);
     REQUIRE(a.size() == 2);
     REQUIRE(v.size() == 0);
@@ -65,7 +66,7 @@ TEST_CASE("move assignment transfers ownership", "[move_assignment]")
 
 TEST_CASE("push_back increases size and stores elements", "[push_back]")
 {
-    Vector<int> v;
+    vector<int> v;
     v.push_back(10);
     v.push_back(20);
     REQUIRE(v.size() == 2);
@@ -75,7 +76,7 @@ TEST_CASE("push_back increases size and stores elements", "[push_back]")
 
 TEST_CASE("pop_back decreases size and removes last element", "[pop_back]")
 {
-    Vector<int> v;
+    vector<int> v;
     v.push_back(1);
     v.push_back(2);
     v.pop_back();
@@ -85,7 +86,7 @@ TEST_CASE("pop_back decreases size and removes last element", "[pop_back]")
 
 TEST_CASE("reserve increases capacity without changing size", "[reserve]")
 {
-    Vector<int> v;
+    vector<int> v;
     v.reserve(5);
     REQUIRE(v.size() == 0);
     REQUIRE(v.capacity() >= 5);
@@ -97,7 +98,7 @@ TEST_CASE("reserve increases capacity without changing size", "[reserve]")
 
 TEST_CASE("resize shrinks and expands with default values", "[resize]")
 {
-    Vector<int> v;
+    vector<int> v;
     v.push_back(5);
     v.push_back(6);
     v.resize(1);
@@ -111,7 +112,7 @@ TEST_CASE("resize shrinks and expands with default values", "[resize]")
 
 TEST_CASE("clear resets size to zero but retains capacity", "[clear]")
 {
-    Vector<int> v;
+    vector<int> v;
     v.reserve(4);
     v.push_back(1);
     v.push_back(2);

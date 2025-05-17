@@ -1,6 +1,7 @@
 #include "Vector.hpp"
 #include <string>
+using custm::vector;
 
-template class Vector<int>;
-template class Vector<double>;
-template class Vector<std::string>;
+template class vector<int>;
+template class vector<double>;
+template class vector<std::string>;
