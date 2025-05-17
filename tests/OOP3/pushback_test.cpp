@@ -1,11 +1,8 @@
-#include "lib/studentas.h"
-#include "lib/isvedimas.h"
+#include "lib/main_lib.h"
 #include "Vector.hpp"
 
 int main(int argc, char *argv[])
 {
-    srand(69420);
-
     ar_skaiciuoti_laika = true;
     timer_prad();
 
@@ -27,7 +24,7 @@ int main(int argc, char *argv[])
 
     timer_prad();
 
-    Vector<int> v2;
+    custm::vector<int> v2;
 
     for (unsigned int i = 1; i <= sz; ++i)
     {

@@ -148,6 +148,8 @@ public:
  */
 void failo_ivedimas(vector<studentas> &grupe, istream &is);
 
+
+
 /**
  * @brief Išskiria studentus į dvi grupes, remiantis jų galutiniu pažymiu.
  *

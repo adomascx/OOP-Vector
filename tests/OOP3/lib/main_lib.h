@@ -1,10 +1,15 @@
 #pragma once
 
+#ifdef USE_CUSTOM_VECTOR
+    #include "Vector.hpp"
+    using custm::vector;
+#else
+    #include <vector>
+    using std::vector;
+#endif
+
 #include <stdexcept>
 using std::runtime_error;
-
-#include <vector>
-using std::vector;
 
 #include <iostream>
 using std::cin;
