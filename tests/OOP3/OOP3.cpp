@@ -3,7 +3,6 @@
 
 int main()
 {
-
     srand(69420);
     char choice; // vartotojo pasirinkimas
 

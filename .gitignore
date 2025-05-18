@@ -1,5 +1,7 @@
-/.vscode
-/build/*
-/txt/
+.vscode/
+build/*
+txt/
 
-/docs/REQUIREMENTS.md
+dist/OOP3.exe
+
+docs/REQUIREMENTS.md

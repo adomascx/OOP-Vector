@@ -1,25 +1,31 @@
 CXX = g++
 CXXFLAGS = -O2 -Wall -Wextra -fdiagnostics-color=always -g -std=c++20 -Iinclude -mconsole
-DLLFLAGS=-shared -Wl,--out-implib,$(OUT_LIB)
+DLLFLAGS = -shared -static-libgcc -static-libstdc++ -Wl,--out-implib,$(OUT_LIB)
 
-OUT_DIR=build
-OOP3_DIR=tests/OOP3
+OUT_DIR = build
+OOP3_DIR = tests/OOP3
 
-OUT_OBJ = $(OUT_DIR)/Vector.o
-OUT_DLL = $(OUT_DIR)/Vector.dll
-OUT_LIB = $(OUT_DIR)/Vector.a
+OUT_OBJ  = $(OUT_DIR)/Vector.o
+OUT_DLL  = $(OUT_DIR)/Vector.dll
+OUT_LIB  = $(OUT_DIR)/Vector.a
 
-TEST_UNIT = $(OUT_DIR)/vector/unit_test.exe
-TEST_PUSHBACK = $(OUT_DIR)/vector/pushback_test.exe
+TEST_UNIT     = $(OUT_DIR)/unit_test.exe
+TEST_PUSHBACK = $(OUT_DIR)/pushback_test.exe
 
-TEST_TIME_STD = $(OUT_DIR)/std/time.exe
-TEST_TIME_CUSTM = $(OUT_DIR)custm/time.exe
-MAIN_STD = $(OUT_DIR)/std/OOP3.exe
-MAIN_CUSTM = $(OUT_DIR)/custm/OOP3.exe
+TEST_TIME_STD   = $(OUT_DIR)/time_std.exe
+TEST_TIME_CUSTM = $(OUT_DIR)/time_custm.exe
+MAIN_STD        = $(OUT_DIR)/OOP3_std.exe
+MAIN_CUSTM      = $(OUT_DIR)/OOP3_custm.exe
+
+DIST = dist/OOP3.exe
 
 all: $(OUT_DIR) $(OUT_DLL) $(TEST_UNIT) $(TEST_PUSHBACK)
 
-main: std custm
+main: custm std 
+
+dist: $(OUT_DIR) $(OUT_DLL) $(OOP3_DIR)/OOP3.cpp $(wildcard $(OOP3_DIR)/lib/*.cpp)
+	$(CXX) $(CXXFLAGS) -DUSE_CUSTOM_VECTOR -o $(DIST) $(OOP3_DIR)/OOP3.cpp $(wildcard $(OOP3_DIR)/lib/*.cpp) -L$(OUT_DIR) -lVector
+
 
 $(OUT_DIR):
 	mkdir $(OUT_DIR)
@@ -46,5 +52,6 @@ custm: $(OOP3_DIR)/OOP3.cpp $(wildcard $(OOP3_DIR)/lib/*.cpp) $(OUT_DLL) custm_t
 custm_test: $(OOP3_DIR)/time_test.cpp $(wildcard $(OOP3_DIR)/lib/*.cpp) $(OUT_DLL) | $(OUT_DIR)
 	$(CXX) $(CXXFLAGS) -DUSE_CUSTOM_VECTOR -o $(TEST_TIME_CUSTM) $(OOP3_DIR)/time_test.cpp $(wildcard $(OOP3_DIR)/lib/*.cpp) -L$(OUT_DIR) -lVector
 
+.PHONY: clean
 clean:
 	if exist "$(OUT_DIR)" rmdir /S /Q "$(OUT_DIR)"
