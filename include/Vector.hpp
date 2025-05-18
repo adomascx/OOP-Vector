@@ -5,7 +5,17 @@
  * @tparam T elemento tipas
  */
 #pragma once
-#include "export.h"
+
+#if defined _WIN32 || defined __CYGWIN__
+    #ifdef BUILDING_VECTOR
+        #define VECTOR_API __declspec(dllexport)
+    #else
+        #define VECTOR_API __declspec(dllimport)
+    #endif
+#else // Linux / macOS etc.
+    #define VECTOR_API __attribute__((visibility("default")))
+#endif
+
 #include <cstddef>
 #include <stdexcept>
 #include <utility>
@@ -55,6 +65,22 @@ namespace custm
         {
             other.data_ = nullptr;
             other.size_ = other.capacity_ = 0;
+        }
+
+        /**
+         * @brief Konstruktorius iš intervalo [first, last]
+         * @tparam InputIt iteratoriaus tipas
+         * @param first Iteratorius į pirmą intervalo elementą
+         * @param last  Iteratorius už paskutinio intervalo elemento
+         */
+        template <typename InputIt>
+        vector(InputIt first, InputIt last)
+            : data_(nullptr), size_(0), capacity_(0)
+        {
+            for (; first != last; ++first)
+            {
+                push_back(*first);
+            }
         }
 
         /**
@@ -172,7 +198,23 @@ namespace custm
             size_ = 0;
         }
 
-  
+        /**
+         * @brief Pašalina elementų intervalą [first, last)
+         * @param first Iteratorius į pirmą šalinamą elementą
+         * @param last  Iteratorius už paskutinio šalinamo elemento (paskutinis elementas + 1)
+         * @return Iteratorius į vietą, kurioje buvo pirmas pašalintas elementas
+         */
+        T *erase(T *first, T *last)
+        {
+            size_type start = first - data_;
+            size_type count = last - first;
+            for (size_type i = start; i + count < size_; ++i)
+            {
+                data_[i] = std::move(data_[i + count]);
+            }
+            size_ -= count;
+            return data_ + start;
+        }
 
         /**
          * @brief Grąžina elementų skaičių
