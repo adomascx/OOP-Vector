@@ -1,11 +1,11 @@
 #pragma once
 
 #ifdef USE_CUSTOM_VECTOR
-    #include "Vector.hpp"
-    using custm::vector;
+#include "Vector.hpp"
+using custm::vector;
 #else
-    #include <vector>
-    using std::vector;
+#include <vector>
+using std::vector;
 #endif
 
 #include <stdexcept>
@@ -57,9 +57,9 @@ using std::make_move_iterator;
 using std::move;
 
 #include <filesystem>
-using std::filesystem::path;
-using std::filesystem::exists;
 using std::filesystem::create_directories;
+using std::filesystem::exists;
+using std::filesystem::path;
 
 static const char output_file[] = "txt/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
 

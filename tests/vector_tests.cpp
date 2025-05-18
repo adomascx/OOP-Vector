@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "catch_amalgamated.hpp"
+#include "../tests/catch_amalgamated.hpp"
 #include "Vector.hpp"
 using custm::vector;
 
