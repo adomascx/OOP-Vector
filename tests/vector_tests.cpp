@@ -84,6 +84,12 @@ TEST_CASE("pop_back decreases size and removes last element", "[pop_back]")
     REQUIRE(v[0] == 1);
 }
 
+TEST_CASE("pop_back on empty vector throws", "[pop_back]")
+{
+    vector<int> v;
+    REQUIRE_THROWS_AS(v.pop_back(), std::out_of_range);
+}
+
 TEST_CASE("reserve increases capacity without changing size", "[reserve]")
 {
     vector<int> v;
@@ -120,4 +126,58 @@ TEST_CASE("clear resets size to zero but retains capacity", "[clear]")
     v.clear();
     REQUIRE(v.size() == 0);
     REQUIRE(v.capacity() == cap);
+}
+
+TEST_CASE("range constructor builds from iterator range", "[constructor][range]") {
+    int arr[] = {1, 2, 3, 4};
+    vector<int> v(arr, arr + 4);
+    REQUIRE(v.size() == 4);
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 2);
+    REQUIRE(v[2] == 3);
+    REQUIRE(v[3] == 4);
+}
+
+TEST_CASE("reserve does nothing if new capacity is smaller", "[reserve]") {
+    vector<int> v;
+    v.reserve(10);
+    auto old_cap = v.capacity();
+    v.reserve(5);
+    REQUIRE(v.capacity() == old_cap);
+}
+
+TEST_CASE("erase middle segment", "[erase]") {
+    vector<int> v;
+    for (int i = 1; i <= 5; ++i) v.push_back(i); // {1,2,3,4,5}
+    auto it = v.erase(v.begin() + 1, v.begin() + 3); // remove 2,3
+    REQUIRE(v.size() == 3);
+    REQUIRE(it == v.begin() + 1);
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 4);
+    REQUIRE(v[2] == 5);
+}
+
+TEST_CASE("erase last element", "[erase]") {
+    vector<int> v;
+    for (int i = 1; i <= 3; ++i) v.push_back(i); // {1,2,3}
+    auto it = v.erase(v.begin() + 2, v.begin() + 3); // remove 3
+    REQUIRE(v.size() == 2);
+    REQUIRE(it == v.end());
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 2);
+}
+
+TEST_CASE("erase entire range", "[erase]") {
+    vector<int> v;
+    for (int i = 1; i <= 3; ++i) v.push_back(i);
+    auto it = v.erase(v.begin(), v.end());
+    REQUIRE(v.empty());
+    REQUIRE(it == v.begin());
+}
+
+TEST_CASE("const subscript returns correct value", "[subscript][const]") {
+    vector<int> v;
+    v.push_back(42);
+    const vector<int>& cv = v;
+    REQUIRE(cv[0] == 42);
 }

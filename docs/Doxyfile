@@ -991,8 +991,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = ../include/export.h \
-                         ../src/Vector.cpp \
+INPUT                  = ../src/Vector.cpp \
                          ../tests/vector_tests.cpp \
                          ../include/Vector.hpp
 
@@ -1100,7 +1099,17 @@ RECURSIVE              = NO
 # run.
 
 EXCLUDE                = ../tests/catch_amalgamated.cpp \
-                         ../tests/catch_amalgamated.hpp
+                         ../tests/catch_amalgamated.hpp \
+                         ../tests/OOP3/OOP3.cpp \
+                         ../tests/OOP3/pushback_test.cpp \
+                         ../tests/OOP3/time_test.cpp \
+                         ../tests/OOP3/lib/isvedimas.cpp \
+                         ../tests/OOP3/lib/isvedimas.h \
+                         ../tests/OOP3/lib/main_lib.cpp \
+                         ../tests/OOP3/lib/main_lib.h \
+                         ../tests/OOP3/lib/studentas.cpp \
+                         ../tests/OOP3/lib/studentas.h \
+                         ../tests/OOP3/lib/zmogus.h
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

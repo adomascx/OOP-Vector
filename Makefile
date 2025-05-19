@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -O2 -Wall -Wextra -fdiagnostics-color=always -g -std=c++20 -Iinclude -mconsole
+CXXFLAGS = -O3 -Wall -Wextra -fdiagnostics-color=always -g -std=c++20 -Iinclude -mconsole
 DLLFLAGS = -shared -static-libgcc -static-libstdc++ -Wl,--out-implib,$(OUT_LIB)
 
 OUT_DIR = build
@@ -52,6 +52,5 @@ custm: $(OOP3_DIR)/OOP3.cpp $(wildcard $(OOP3_DIR)/lib/*.cpp) $(OUT_DLL) custm_t
 custm_test: $(OOP3_DIR)/time_test.cpp $(wildcard $(OOP3_DIR)/lib/*.cpp) $(OUT_DLL) | $(OUT_DIR)
 	$(CXX) $(CXXFLAGS) -DUSE_CUSTOM_VECTOR -o $(TEST_TIME_CUSTM) $(OOP3_DIR)/time_test.cpp $(wildcard $(OOP3_DIR)/lib/*.cpp) -L$(OUT_DIR) -lVector
 
-.PHONY: clean
 clean:
 	if exist "$(OUT_DIR)" rmdir /S /Q "$(OUT_DIR)"
