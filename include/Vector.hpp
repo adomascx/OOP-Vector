@@ -20,6 +20,7 @@
 #include <stdexcept>
 #include <utility>
 #include <algorithm>
+#include <initializer_list>
 
 namespace custm
 {
@@ -82,6 +83,32 @@ namespace custm
                 push_back(*first);
             }
         }
+
+        /**
+         * @brief Konstruktorius, sukuriantis vektorių su nurodytu elementų skaičiumi, bei visus elementus inicializuojant duota verte.
+         * @param count Elementų skaičius
+         * @param value Inicializacijos reikšmė kiekvienam elementui
+         */
+        vector(size_type count, const T &value)
+            : data_(nullptr), size_(0), capacity_(0)
+        {
+            if (count > 0)
+            {
+                reserve(count);
+                for (size_type i = 0; i < count; ++i)
+                {
+                    data_[i] = value;
+                }
+                size_ = count;
+            }
+        }
+
+        /**
+         * @brief Inicializavimo sąrašo konstruktorius, leidžiantis inicializuoti vektorių su užrašytais elementais.
+         * @param init Inicializacijos sąrašas
+         */
+        vector(std::initializer_list<T> init)
+            : vector(init.begin(), init.end()) {}
 
         /**
          * @brief Kopijavimo priskyrimo operatorius
@@ -199,7 +226,7 @@ namespace custm
         }
 
         /**
-         * @brief Pašalina elementų intervalą [first, last)
+         * @brief Pašalina elementų intervalą (first, last)
          * @param first Iteratorius į pirmą šalinamą elementą
          * @param last  Iteratorius už paskutinio šalinamo elemento (paskutinis elementas + 1)
          * @return Iteratorius į vietą, kurioje buvo pirmas pašalintas elementas
@@ -241,6 +268,30 @@ namespace custm
          */
         T &operator[](size_type idx) { return data_[idx]; }
         const T &operator[](size_type idx) const noexcept { return data_[idx]; }
+
+        /**
+         * @brief Pasiekia elementą su ribų tikrinimu.
+         * @param idx Elemento indeksas
+         * @return Nuoroda į elementą
+         * @throws std::out_of_range jei indeksas neleistinas
+         */
+        T &at(size_type idx)
+        {
+            if (idx >= size_)
+            {
+                throw std::out_of_range("at(): index out of range");
+            }
+            return data_[idx];
+        }
+
+        const T &at(size_type idx) const
+        {
+            if (idx >= size_)
+            {
+                throw std::out_of_range("at(): index out of range");
+            }
+            return data_[idx];
+        }
 
         /**
          * @brief Gražina iteratorių į pirmą elementą

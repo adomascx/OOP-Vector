@@ -6,7 +6,9 @@ int main(int argc, char *argv[])
     ar_skaiciuoti_laika = true;
     timer_prad();
 
-    unsigned int sz = atoi(argv[1]); // 100000, 1000000, 10000000, 100000000
+    unsigned int sz = 1000000;
+    if (argc == 2)
+        sz = atoi(argv[1]); // 100000, 1000000, 10000000, 100000000
 
     std::vector<int> v1;
     unsigned int mem_count = 0;
@@ -19,7 +21,7 @@ int main(int argc, char *argv[])
     }
 
     timer_pab("std::vector push_back");
-    cout << mem_count << endl;
+    // cout << mem_count << endl;
     mem_count = 0;
 
     timer_prad();
