@@ -34,10 +34,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\Adomas\source\repos\OOP-Vector\dist\OOP3.exe"; DestDir: "{app}"; Flags: ignoreversion
-; Manifest that forces run-as-admin
-Source: "C:\Users\Adomas\source\repos\OOP-Vector\dist\OOP3.exe.manifest"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Adomas\source\repos\OOP-Vector\build\Vector.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Administrator\source\repos\C++\OOP-Vector\dist\OOP3.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Administrator\source\repos\C++\OOP-Vector\build\Vector.dll"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{autoprograms}\OOP-Vector"; Filename: "{app}\OOP3.exe"

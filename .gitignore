@@ -3,5 +3,7 @@ build/*
 txt/
 
 dist/OOP3.exe
+dist/Output/
+dist/manifest/admin.res
 
 docs/REQUIREMENTS.md
