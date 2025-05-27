@@ -36,5 +36,5 @@ int main(int argc, char *argv[])
     }
 
     timer_pab("Vector push_back");
-    cout << mem_count << endl;
+    // cout << mem_count << endl;
 }

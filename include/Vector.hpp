@@ -1,6 +1,6 @@
 /**
  * @file vector.hpp
- * @brief Paprasta dinaminio masyvo (vektoriaus) implementacija
+ * @brief Paprasta dinaminio masyvo (vector) implementacija
  *
  * @tparam T elemento tipas
  */
@@ -21,12 +21,13 @@
 #include <utility>
 #include <algorithm>
 #include <initializer_list>
+#include <type_traits>
 
 namespace custm
 {
 
     /**
-     * @brief Dinaminio masyvo (vektoriaus) klasė
+     * @brief Dinaminio masyvo (vector) klasė
      *
      * @tparam T elemento tipas
      */
@@ -37,7 +38,7 @@ namespace custm
         using size_type = std::size_t;
 
         /**
-         * @brief Default konstruktorius
+         * @brief Numatytasis (default) konstruktorius – sukuria tuščią vector
          */
         vector() noexcept
             : data_(nullptr), size_(0), capacity_(0) {}
@@ -104,8 +105,8 @@ namespace custm
         }
 
         /**
-         * @brief Inicializavimo sąrašo konstruktorius, leidžiantis inicializuoti vektorių su užrašytais elementais.
-         * @param init Inicializacijos sąrašas
+         * @brief Inicializavimo sąrašo konstruktorius
+         * @param init elementų sąrašas
          */
         vector(std::initializer_list<T> init)
             : vector(init.begin(), init.end()) {}
@@ -145,11 +146,18 @@ namespace custm
         }
 
         /**
-         * @brief Destruktorius, atlaisvina atmintį
+         * @brief Destruktorius – sunaikina visus elementus ir atlaisvina atmintį
          */
-        ~vector()
+        ~vector() noexcept
         {
-            delete[] data_;
+            if (!data_)
+                return;
+            if constexpr (!std::is_trivially_destructible_v<T>)
+            {
+                for (size_type i = size_; i-- > 0;)
+                    data_[i].~T();
+            }
+            delete[] (data_);
         }
 
         /**
@@ -250,7 +258,7 @@ namespace custm
         size_type size() const noexcept { return size_; }
 
         /**
-         * @brief Grąžina talpą
+         * @brief Grąžina šiuo metu rezervuotą talpą
          * @return Dabartinė talpa
          */
         size_type capacity() const noexcept { return capacity_; }
@@ -301,15 +309,34 @@ namespace custm
         const T *begin() const noexcept { return data_; }
 
         /**
+         * @brief Grąžina raw pointer į vidinį buferį
+         * @return pointer į pirmą elementą (arba nullptr jei tuščias)
+         */
+        T *data() noexcept { return data_; }
+        const T *data() const noexcept { return data_; }
+
+        /**
          * @brief Gražina iteratorių į paskutinį elementą
          * @return Nuoroda į paskutinį elementą
          */
         T *end() noexcept { return data_ + size_; }
         const T *end() const noexcept { return data_ + size_; }
 
+        /**
+         * @brief Grąžina nuorodą į pirmą elementą
+         */
+        T &front() { return data_[0]; }
+        const T &front() const { return data_[0]; }
+
+        /**
+         * @brief Grąžina nuorodą į paskutinį elementą
+         */
+        T &back() { return data_[size_ - 1]; }
+        const T &back() const { return data_[size_ - 1]; }
+
     private:
         /**
-         * @brief Padidina vidinį buferį
+         * @brief Padidina vidinį buferį dvigubai (arba iki 1)
          */
         void grow()
         {

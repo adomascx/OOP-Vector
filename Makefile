@@ -27,7 +27,7 @@ MAIN_CUSTM      = $(OUT_DIR)/OOP3_custm.exe
 DIST = $(DIST_DIR)/OOP3.exe
 
 
-all: $(OUT_DIR) $(OUT_DLL) $(TEST_UNIT) $(TEST_PUSHBACK)
+all: $(OUT_DIR) $(OUT_DLL) $(TEST_PUSHBACK) $(TEST_UNIT)
 
 main: custm std 
 
