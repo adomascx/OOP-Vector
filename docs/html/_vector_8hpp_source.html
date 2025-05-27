@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OOP-Vector: C:/Users/Adomas/source/repos/OOP-Vector/include/Vector.hpp išeities tekstas</title>
+<title>OOP-Vector: C:/Users/Administrator/source/repos/C++/OOP-Vector/include/Vector.hpp išeities tekstas</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -123,232 +123,303 @@ $(function(){initNavTree('_vector_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacecustm.html">   24</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecustm.html">custm</a></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html">   33</a></span>    <span class="keyword">class </span><a class="code hl_define" href="_vector_8hpp.html#a7256d4c0727510c923bf85908422a424">VECTOR_API</a> <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">   36</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> = std::size_t;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">   41</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a>() noexcept</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            : data_(<span class="keywordtype">nullptr</span>), size_(0), capacity_(0) {}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;initializer_list&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespacecustm.html">   26</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecustm.html">custm</a></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html">   35</a></span>    <span class="keyword">class </span><a class="code hl_define" href="_vector_8hpp.html#a7256d4c0727510c923bf85908422a424">VECTOR_API</a> <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">   38</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> = std::size_t;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">   43</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a>() noexcept</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            : data_(<span class="keywordtype">nullptr</span>), size_(0), capacity_(0) {}</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#ab5bcc3d696006b39e440c959007c8973">   48</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#ab5bcc3d696006b39e440c959007c8973">vector</a>(<span class="keyword">const</span> <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;other)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            : data_(nullptr), size_(0), capacity_(0)</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">if</span> (other.size_)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                data_ = new T[other.size_];</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                std::copy(other.data_, other.data_ + other.size_, data_);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                size_ = capacity_ = other.size_;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#ab5bcc3d696006b39e440c959007c8973">   50</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#ab5bcc3d696006b39e440c959007c8973">vector</a>(<span class="keyword">const</span> <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;other)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            : data_(nullptr), size_(0), capacity_(0)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">if</span> (other.size_)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                data_ = new T[other.size_];</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                std::copy(other.data_, other.data_ + other.size_, data_);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                size_ = capacity_ = other.size_;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#adab2b5224d0f1ff88919a3faf70ad559">   63</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#adab2b5224d0f1ff88919a3faf70ad559">vector</a>(<a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;&amp;other) noexcept</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            : data_(other.data_), size_(other.size_), capacity_(other.capacity_)</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            other.data_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            other.size_ = other.capacity_ = 0;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#adab2b5224d0f1ff88919a3faf70ad559">   65</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#adab2b5224d0f1ff88919a3faf70ad559">vector</a>(<a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;&amp;other) noexcept</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            : data_(other.data_), size_(other.size_), capacity_(other.capacity_)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            other.data_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            other.size_ = other.capacity_ = 0;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> InputIt&gt;</div>
-<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9affade730b59821b899dbe67a5d8cf6">   77</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#a9affade730b59821b899dbe67a5d8cf6">vector</a>(InputIt first, InputIt last)</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            : data_(nullptr), size_(0), capacity_(0)</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">for</span> (; first != last; ++first)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <a class="code hl_function" href="classcustm_1_1vector.html#a9dccdc6a2b7f2fd6b45edb7d1fd78b59">push_back</a>(*first);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> InputIt&gt;</div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9affade730b59821b899dbe67a5d8cf6">   79</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#a9affade730b59821b899dbe67a5d8cf6">vector</a>(InputIt first, InputIt last)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            : data_(nullptr), size_(0), capacity_(0)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">for</span> (; first != last; ++first)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <a class="code hl_function" href="classcustm_1_1vector.html#a9dccdc6a2b7f2fd6b45edb7d1fd78b59">push_back</a>(*first);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
 </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
-<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#aab8ab1c39f38a62cb8609c70a2d32dc4">   91</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;<a class="code hl_function" href="classcustm_1_1vector.html#aab8ab1c39f38a62cb8609c70a2d32dc4">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;other)</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> tmp(other);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                swap(tmp);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9f5fa5e136c02275a09a8f180030dda3">   93</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#a9f5fa5e136c02275a09a8f180030dda3">vector</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> count, <span class="keyword">const</span> T &amp;value)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            : data_(nullptr), size_(0), capacity_(0)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">if</span> (count &gt; 0)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <a class="code hl_function" href="classcustm_1_1vector.html#aca8331edbe35b392b9af90f8cc9e251d">reserve</a>(count);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> i = 0; i &lt; count; ++i)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    data_[i] = value;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                size_ = count;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
 </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
-<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a37e2ffb61958d4d4c1ebe003929b8725">  106</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a37e2ffb61958d4d4c1ebe003929b8725">operator=</a>(<a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;&amp;other) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other)</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="keyword">delete</span>[] data_;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                data_ = other.data_;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                size_ = other.size_;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                capacity_ = other.capacity_;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                other.data_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                other.size_ = other.capacity_ = 0;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#aea38932d2511a217f066defa26ac6bcf">  111</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#aea38932d2511a217f066defa26ac6bcf">vector</a>(std::initializer_list&lt;T&gt; init)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            : <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a>(init.<a class="code hl_function" href="classcustm_1_1vector.html#ac76ad1cca6b303a7b53c95edeb02cc9f">begin</a>(), init.<a class="code hl_function" href="classcustm_1_1vector.html#a09c4e855957c04cb67b65af43cd89a09">end</a>()) {}</div>
 </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
-<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a8f9f7d4918bce014554618a4dddf6ffe">  123</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#a8f9f7d4918bce014554618a4dddf6ffe">~vector</a>()</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keyword">delete</span>[] data_;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#aab8ab1c39f38a62cb8609c70a2d32dc4">  119</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;<a class="code hl_function" href="classcustm_1_1vector.html#aab8ab1c39f38a62cb8609c70a2d32dc4">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;other)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> tmp(other);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                swap(tmp);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
 </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
-<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9dccdc6a2b7f2fd6b45edb7d1fd78b59">  132</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#a9dccdc6a2b7f2fd6b45edb7d1fd78b59">push_back</a>(<span class="keyword">const</span> T &amp;value)</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <span class="keywordflow">if</span> (size_ &gt;= capacity_)</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                grow();</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            }</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            data_[size_++] = value;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a37e2ffb61958d4d4c1ebe003929b8725">  134</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a37e2ffb61958d4d4c1ebe003929b8725">operator=</a>(<a class="code hl_function" href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">vector</a> &amp;&amp;other) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                <span class="keyword">delete</span>[] data_;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                data_ = other.data_;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                size_ = other.size_;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                capacity_ = other.capacity_;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                other.data_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                other.size_ = other.capacity_ = 0;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
 </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
-<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a5628de674ca406ae0ec9b4e6769dec1c">  145</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#a5628de674ca406ae0ec9b4e6769dec1c">pop_back</a>()</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <span class="keywordflow">if</span> (size_ == 0)</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            {</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;pop_back from empty vector&quot;</span>);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            }</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            --size_;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a8c23ee909052731c8d64bb61a61e2187">  151</a></span>        <a class="code hl_function" href="classcustm_1_1vector.html#a8c23ee909052731c8d64bb61a61e2187">~vector</a>() noexcept</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keywordflow">if</span> (!data_)</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (!std::is_trivially_destructible_v&lt;T&gt;)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> i = size_; i-- &gt; 0;)</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                    data_[i].~T();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keyword">delete</span>[] (data_);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        }</div>
 </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
-<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#aca8331edbe35b392b9af90f8cc9e251d">  158</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#aca8331edbe35b392b9af90f8cc9e251d">reserve</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> new_cap)</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">if</span> (new_cap &lt;= capacity_)</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            T *new_data = <span class="keyword">new</span> T[new_cap];</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> i = 0; i &lt; size_; ++i)</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                new_data[i] = std::move(data_[i]);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            }</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <span class="keyword">delete</span>[] data_;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            data_ = new_data;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            capacity_ = new_cap;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9dccdc6a2b7f2fd6b45edb7d1fd78b59">  167</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#a9dccdc6a2b7f2fd6b45edb7d1fd78b59">push_back</a>(<span class="keyword">const</span> T &amp;value)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">if</span> (size_ &gt;= capacity_)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                grow();</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            data_[size_++] = value;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        }</div>
 </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
-<div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#ac563f772138e5050eef5eeb064207983">  176</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#ac563f772138e5050eef5eeb064207983">resize</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> count)</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="keywordflow">if</span> (count &lt; size_)</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            {</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                size_ = count;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count &gt; size_)</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
+<div class="foldopen" id="foldopen00180" data-start="{" data-end="}">
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a5628de674ca406ae0ec9b4e6769dec1c">  180</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#a5628de674ca406ae0ec9b4e6769dec1c">pop_back</a>()</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">if</span> (size_ == 0)</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            {</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <a class="code hl_function" href="classcustm_1_1vector.html#aca8331edbe35b392b9af90f8cc9e251d">reserve</a>(count);</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> i = size_; i &lt; count; ++i)</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                    data_[i] = T();</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                }</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                size_ = count;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            }</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;pop_back from empty vector&quot;</span>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            --size_;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        }</div>
 </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span></div>
-<div class="foldopen" id="foldopen00196" data-start="{" data-end="}">
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a83af6c75b5a6bf43b56d2fceb850251b">  196</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#a83af6c75b5a6bf43b56d2fceb850251b">clear</a>() noexcept</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        {</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            size_ = 0;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span></div>
+<div class="foldopen" id="foldopen00193" data-start="{" data-end="}">
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#aca8331edbe35b392b9af90f8cc9e251d">  193</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#aca8331edbe35b392b9af90f8cc9e251d">reserve</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> new_cap)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">if</span> (new_cap &lt;= capacity_)</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            T *new_data = <span class="keyword">new</span> T[new_cap];</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> i = 0; i &lt; size_; ++i)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                new_data[i] = std::move(data_[i]);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keyword">delete</span>[] data_;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            data_ = new_data;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            capacity_ = new_cap;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        }</div>
 </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span></div>
-<div class="foldopen" id="foldopen00207" data-start="{" data-end="}">
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a54bfd413c1406580c9e04ea30057ae5f">  207</a></span>        T *<a class="code hl_function" href="classcustm_1_1vector.html#a54bfd413c1406580c9e04ea30057ae5f">erase</a>(T *first, T *last)</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        {</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> start = first - data_;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> count = last - first;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> i = start; i + count &lt; size_; ++i)</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            {</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                data_[i] = std::move(data_[i + count]);</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            }</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            size_ -= count;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keywordflow">return</span> data_ + start;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
+<div class="foldopen" id="foldopen00211" data-start="{" data-end="}">
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#ac563f772138e5050eef5eeb064207983">  211</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#ac563f772138e5050eef5eeb064207983">resize</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> count)</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <span class="keywordflow">if</span> (count &lt; size_)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                size_ = count;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            }</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count &gt; size_)</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                <a class="code hl_function" href="classcustm_1_1vector.html#aca8331edbe35b392b9af90f8cc9e251d">reserve</a>(count);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> i = size_; i &lt; count; ++i)</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                    data_[i] = T();</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                size_ = count;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        }</div>
 </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a5f2154a77cd8974769d7c0fb2e46aabd">  223</a></span>        <a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> <a class="code hl_function" href="classcustm_1_1vector.html#a5f2154a77cd8974769d7c0fb2e46aabd">size</a>() const noexcept { <span class="keywordflow">return</span> size_; }</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span></div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9dafcbea9ac61f617dee07bde7822575">  229</a></span>        <a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> <a class="code hl_function" href="classcustm_1_1vector.html#a9dafcbea9ac61f617dee07bde7822575">capacity</a>() const noexcept { <span class="keywordflow">return</span> capacity_; }</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a668470d27a2ccc46450ec7519fc7b4b8">  235</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classcustm_1_1vector.html#a668470d27a2ccc46450ec7519fc7b4b8">empty</a>() const noexcept { <span class="keywordflow">return</span> size_ == 0; }</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a5cc206481dd4c2822f3ca76fe4d11ea8">  242</a></span>        T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a5cc206481dd4c2822f3ca76fe4d11ea8">operator[]</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> idx) { <span class="keywordflow">return</span> data_[idx]; }</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a98dc121d7d1a4e74486c943128fc3c34">  243</a></span>        <span class="keyword">const</span> T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a98dc121d7d1a4e74486c943128fc3c34">operator[]</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> idx) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> data_[idx]; }</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#ac76ad1cca6b303a7b53c95edeb02cc9f">  249</a></span>        T *<a class="code hl_function" href="classcustm_1_1vector.html#ac76ad1cca6b303a7b53c95edeb02cc9f">begin</a>() noexcept { <span class="keywordflow">return</span> data_; }</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a833f9a53aa93ffa55cef4f06019474df">  250</a></span>        <span class="keyword">const</span> T *<a class="code hl_function" href="classcustm_1_1vector.html#a833f9a53aa93ffa55cef4f06019474df">begin</a>() const noexcept { <span class="keywordflow">return</span> data_; }</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a09c4e855957c04cb67b65af43cd89a09">  256</a></span>        T *<a class="code hl_function" href="classcustm_1_1vector.html#a09c4e855957c04cb67b65af43cd89a09">end</a>() noexcept { <span class="keywordflow">return</span> data_ + size_; }</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a7869d52d6c7d04391b3f4a2a00de3a5e">  257</a></span>        <span class="keyword">const</span> T *<a class="code hl_function" href="classcustm_1_1vector.html#a7869d52d6c7d04391b3f4a2a00de3a5e">end</a>() const noexcept { <span class="keywordflow">return</span> data_ + size_; }</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordtype">void</span> grow()</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        {</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            size_type new_cap = capacity_ ? capacity_ * 2 : 1;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            reserve(new_cap);</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        }</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span></div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keywordtype">void</span> swap(<a class="code hl_class" href="classvector.html">vector</a> &amp;other) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        {</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            std::swap(data_, other.data_);</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            std::swap(size_, other.size_);</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            std::swap(capacity_, other.capacity_);</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        }</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        T *data_;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        size_type size_;</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        size_type capacity_;</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    };</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
+<div class="foldopen" id="foldopen00231" data-start="{" data-end="}">
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a83af6c75b5a6bf43b56d2fceb850251b">  231</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcustm_1_1vector.html#a83af6c75b5a6bf43b56d2fceb850251b">clear</a>() noexcept</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            size_ = 0;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        }</div>
 </div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>} <span class="comment">// namespace custm</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span></div>
+<div class="foldopen" id="foldopen00242" data-start="{" data-end="}">
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a54bfd413c1406580c9e04ea30057ae5f">  242</a></span>        T *<a class="code hl_function" href="classcustm_1_1vector.html#a54bfd413c1406580c9e04ea30057ae5f">erase</a>(T *first, T *last)</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> start = first - data_;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            <a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> count = last - first;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> i = start; i + count &lt; size_; ++i)</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                data_[i] = std::move(data_[i + count]);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            }</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            size_ -= count;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            <span class="keywordflow">return</span> data_ + start;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        }</div>
+</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a5f2154a77cd8974769d7c0fb2e46aabd">  258</a></span>        <a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> <a class="code hl_function" href="classcustm_1_1vector.html#a5f2154a77cd8974769d7c0fb2e46aabd">size</a>() const noexcept { <span class="keywordflow">return</span> size_; }</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9dafcbea9ac61f617dee07bde7822575">  264</a></span>        <a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> <a class="code hl_function" href="classcustm_1_1vector.html#a9dafcbea9ac61f617dee07bde7822575">capacity</a>() const noexcept { <span class="keywordflow">return</span> capacity_; }</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a668470d27a2ccc46450ec7519fc7b4b8">  270</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classcustm_1_1vector.html#a668470d27a2ccc46450ec7519fc7b4b8">empty</a>() const noexcept { <span class="keywordflow">return</span> size_ == 0; }</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a5cc206481dd4c2822f3ca76fe4d11ea8">  277</a></span>        T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a5cc206481dd4c2822f3ca76fe4d11ea8">operator[]</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> idx) { <span class="keywordflow">return</span> data_[idx]; }</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a98dc121d7d1a4e74486c943128fc3c34">  278</a></span>        <span class="keyword">const</span> T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a98dc121d7d1a4e74486c943128fc3c34">operator[]</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> idx) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> data_[idx]; }</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span></div>
+<div class="foldopen" id="foldopen00286" data-start="{" data-end="}">
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a398a2b09b05583c2996193f9e01bd4e9">  286</a></span>        T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a398a2b09b05583c2996193f9e01bd4e9">at</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> idx)</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            <span class="keywordflow">if</span> (idx &gt;= size_)</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;at(): index out of range&quot;</span>);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>            }</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            <span class="keywordflow">return</span> data_[idx];</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        }</div>
+</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="foldopen" id="foldopen00295" data-start="{" data-end="}">
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a1058a37c55edb325da46bef753cc38ee">  295</a></span>        <span class="keyword">const</span> T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a1058a37c55edb325da46bef753cc38ee">at</a>(<a class="code hl_typedef" href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> idx)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            <span class="keywordflow">if</span> (idx &gt;= size_)</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;at(): index out of range&quot;</span>);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            }</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            <span class="keywordflow">return</span> data_[idx];</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        }</div>
+</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#ac76ad1cca6b303a7b53c95edeb02cc9f">  308</a></span>        T *<a class="code hl_function" href="classcustm_1_1vector.html#ac76ad1cca6b303a7b53c95edeb02cc9f">begin</a>() noexcept { <span class="keywordflow">return</span> data_; }</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a833f9a53aa93ffa55cef4f06019474df">  309</a></span>        <span class="keyword">const</span> T *<a class="code hl_function" href="classcustm_1_1vector.html#a833f9a53aa93ffa55cef4f06019474df">begin</a>() const noexcept { <span class="keywordflow">return</span> data_; }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a514c0ecd5e8e7e317a61f159a75f6e2a">  315</a></span>        T *<a class="code hl_function" href="classcustm_1_1vector.html#a514c0ecd5e8e7e317a61f159a75f6e2a">data</a>() noexcept { <span class="keywordflow">return</span> data_; }</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#af7f43f8820549fed15cace76e9bb376f">  316</a></span>        <span class="keyword">const</span> T *<a class="code hl_function" href="classcustm_1_1vector.html#af7f43f8820549fed15cace76e9bb376f">data</a>() const noexcept { <span class="keywordflow">return</span> data_; }</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a09c4e855957c04cb67b65af43cd89a09">  322</a></span>        T *<a class="code hl_function" href="classcustm_1_1vector.html#a09c4e855957c04cb67b65af43cd89a09">end</a>() noexcept { <span class="keywordflow">return</span> data_ + size_; }</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a7869d52d6c7d04391b3f4a2a00de3a5e">  323</a></span>        <span class="keyword">const</span> T *<a class="code hl_function" href="classcustm_1_1vector.html#a7869d52d6c7d04391b3f4a2a00de3a5e">end</a>() const noexcept { <span class="keywordflow">return</span> data_ + size_; }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a6755a5602f2255eb2539eec47a5478d1">  328</a></span>        T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a6755a5602f2255eb2539eec47a5478d1">front</a>() { <span class="keywordflow">return</span> data_[0]; }</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a3cc20d1d11cbdfdb857d348a113c4aa9">  329</a></span>        <span class="keyword">const</span> T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a3cc20d1d11cbdfdb857d348a113c4aa9">front</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> data_[0]; }</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#a9dad8d8ef4dd386e12411d2092a0a0b7">  334</a></span>        T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#a9dad8d8ef4dd386e12411d2092a0a0b7">back</a>() { <span class="keywordflow">return</span> data_[size_ - 1]; }</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="classcustm_1_1vector.html#ac9692383f8ed523ae2772e5ab2568f3a">  335</a></span>        <span class="keyword">const</span> T &amp;<a class="code hl_function" href="classcustm_1_1vector.html#ac9692383f8ed523ae2772e5ab2568f3a">back</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> data_[size_ - 1]; }</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        <span class="keywordtype">void</span> grow()</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            size_type new_cap = capacity_ ? capacity_ * 2 : 1;</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            reserve(new_cap);</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        }</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        <span class="keywordtype">void</span> swap(<a class="code hl_class" href="classvector.html">vector</a> &amp;other) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>            std::swap(data_, other.data_);</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>            std::swap(size_, other.size_);</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>            std::swap(capacity_, other.capacity_);</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        }</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        T *data_;</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        size_type size_;</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        size_type capacity_;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    };</div>
+</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>} <span class="comment">// namespace custm</span></div>
 </div>
 <div class="ttc" id="a_vector_8hpp_html_a7256d4c0727510c923bf85908422a424"><div class="ttname"><a href="_vector_8hpp.html#a7256d4c0727510c923bf85908422a424">VECTOR_API</a></div><div class="ttdeci">#define VECTOR_API</div><div class="ttdef"><b>Definition</b> <a href="#l00016">Vector.hpp:16</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a09c4e855957c04cb67b65af43cd89a09"><div class="ttname"><a href="classcustm_1_1vector.html#a09c4e855957c04cb67b65af43cd89a09">custm::vector::end</a></div><div class="ttdeci">T * end() noexcept</div><div class="ttdoc">Gražina iteratorių į paskutinį elementą</div><div class="ttdef"><b>Definition</b> <a href="#l00256">Vector.hpp:256</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a37e2ffb61958d4d4c1ebe003929b8725"><div class="ttname"><a href="classcustm_1_1vector.html#a37e2ffb61958d4d4c1ebe003929b8725">custm::vector::operator=</a></div><div class="ttdeci">vector &amp; operator=(vector &amp;&amp;other) noexcept</div><div class="ttdoc">Perkėlimo priskyrimo operatorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00106">Vector.hpp:106</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a54bfd413c1406580c9e04ea30057ae5f"><div class="ttname"><a href="classcustm_1_1vector.html#a54bfd413c1406580c9e04ea30057ae5f">custm::vector::erase</a></div><div class="ttdeci">T * erase(T *first, T *last)</div><div class="ttdoc">Pašalina elementų intervalą [first, last)</div><div class="ttdef"><b>Definition</b> <a href="#l00207">Vector.hpp:207</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a5628de674ca406ae0ec9b4e6769dec1c"><div class="ttname"><a href="classcustm_1_1vector.html#a5628de674ca406ae0ec9b4e6769dec1c">custm::vector::pop_back</a></div><div class="ttdeci">void pop_back()</div><div class="ttdoc">Pašalina paskutinį elementą</div><div class="ttdef"><b>Definition</b> <a href="#l00145">Vector.hpp:145</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a5cc206481dd4c2822f3ca76fe4d11ea8"><div class="ttname"><a href="classcustm_1_1vector.html#a5cc206481dd4c2822f3ca76fe4d11ea8">custm::vector::operator[]</a></div><div class="ttdeci">T &amp; operator[](size_type idx)</div><div class="ttdoc">Pasiekia elementą be ribų tikrinimo.</div><div class="ttdef"><b>Definition</b> <a href="#l00242">Vector.hpp:242</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a5f2154a77cd8974769d7c0fb2e46aabd"><div class="ttname"><a href="classcustm_1_1vector.html#a5f2154a77cd8974769d7c0fb2e46aabd">custm::vector::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Grąžina elementų skaičių</div><div class="ttdef"><b>Definition</b> <a href="#l00223">Vector.hpp:223</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a668470d27a2ccc46450ec7519fc7b4b8"><div class="ttname"><a href="classcustm_1_1vector.html#a668470d27a2ccc46450ec7519fc7b4b8">custm::vector::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdoc">Patikrina, ar vektorius yra tuščias.</div><div class="ttdef"><b>Definition</b> <a href="#l00235">Vector.hpp:235</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a7869d52d6c7d04391b3f4a2a00de3a5e"><div class="ttname"><a href="classcustm_1_1vector.html#a7869d52d6c7d04391b3f4a2a00de3a5e">custm::vector::end</a></div><div class="ttdeci">const T * end() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00257">Vector.hpp:257</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a833f9a53aa93ffa55cef4f06019474df"><div class="ttname"><a href="classcustm_1_1vector.html#a833f9a53aa93ffa55cef4f06019474df">custm::vector::begin</a></div><div class="ttdeci">const T * begin() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00250">Vector.hpp:250</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a83af6c75b5a6bf43b56d2fceb850251b"><div class="ttname"><a href="classcustm_1_1vector.html#a83af6c75b5a6bf43b56d2fceb850251b">custm::vector::clear</a></div><div class="ttdeci">void clear() noexcept</div><div class="ttdoc">Išvalo visus elementus.</div><div class="ttdef"><b>Definition</b> <a href="#l00196">Vector.hpp:196</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a8f9f7d4918bce014554618a4dddf6ffe"><div class="ttname"><a href="classcustm_1_1vector.html#a8f9f7d4918bce014554618a4dddf6ffe">custm::vector::~vector</a></div><div class="ttdeci">~vector()</div><div class="ttdoc">Destruktorius, atlaisvina atmintį</div><div class="ttdef"><b>Definition</b> <a href="#l00123">Vector.hpp:123</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a9377c6bbfed7ebf5377b92665c0c09e4"><div class="ttname"><a href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">custm::vector::size_type</a></div><div class="ttdeci">std::size_t size_type</div><div class="ttdef"><b>Definition</b> <a href="#l00036">Vector.hpp:36</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a98dc121d7d1a4e74486c943128fc3c34"><div class="ttname"><a href="classcustm_1_1vector.html#a98dc121d7d1a4e74486c943128fc3c34">custm::vector::operator[]</a></div><div class="ttdeci">const T &amp; operator[](size_type idx) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00243">Vector.hpp:243</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a9affade730b59821b899dbe67a5d8cf6"><div class="ttname"><a href="classcustm_1_1vector.html#a9affade730b59821b899dbe67a5d8cf6">custm::vector::vector</a></div><div class="ttdeci">vector(InputIt first, InputIt last)</div><div class="ttdoc">Konstruktorius iš intervalo [first, last].</div><div class="ttdef"><b>Definition</b> <a href="#l00077">Vector.hpp:77</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a9dafcbea9ac61f617dee07bde7822575"><div class="ttname"><a href="classcustm_1_1vector.html#a9dafcbea9ac61f617dee07bde7822575">custm::vector::capacity</a></div><div class="ttdeci">size_type capacity() const noexcept</div><div class="ttdoc">Grąžina talpą</div><div class="ttdef"><b>Definition</b> <a href="#l00229">Vector.hpp:229</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_a9dccdc6a2b7f2fd6b45edb7d1fd78b59"><div class="ttname"><a href="classcustm_1_1vector.html#a9dccdc6a2b7f2fd6b45edb7d1fd78b59">custm::vector::push_back</a></div><div class="ttdeci">void push_back(const T &amp;value)</div><div class="ttdoc">Prideda elementą į vektoriaus pabaigą</div><div class="ttdef"><b>Definition</b> <a href="#l00132">Vector.hpp:132</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_aab8ab1c39f38a62cb8609c70a2d32dc4"><div class="ttname"><a href="classcustm_1_1vector.html#aab8ab1c39f38a62cb8609c70a2d32dc4">custm::vector::operator=</a></div><div class="ttdeci">vector &amp; operator=(const vector &amp;other)</div><div class="ttdoc">Kopijavimo priskyrimo operatorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">Vector.hpp:91</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_ab5bcc3d696006b39e440c959007c8973"><div class="ttname"><a href="classcustm_1_1vector.html#ab5bcc3d696006b39e440c959007c8973">custm::vector::vector</a></div><div class="ttdeci">vector(const vector &amp;other)</div><div class="ttdoc">Kopijavimo konstruktorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">Vector.hpp:48</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_ac563f772138e5050eef5eeb064207983"><div class="ttname"><a href="classcustm_1_1vector.html#ac563f772138e5050eef5eeb064207983">custm::vector::resize</a></div><div class="ttdeci">void resize(size_type count)</div><div class="ttdoc">Keičia vektoriaus dydį</div><div class="ttdef"><b>Definition</b> <a href="#l00176">Vector.hpp:176</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_ac76ad1cca6b303a7b53c95edeb02cc9f"><div class="ttname"><a href="classcustm_1_1vector.html#ac76ad1cca6b303a7b53c95edeb02cc9f">custm::vector::begin</a></div><div class="ttdeci">T * begin() noexcept</div><div class="ttdoc">Gražina iteratorių į pirmą elementą</div><div class="ttdef"><b>Definition</b> <a href="#l00249">Vector.hpp:249</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_aca8331edbe35b392b9af90f8cc9e251d"><div class="ttname"><a href="classcustm_1_1vector.html#aca8331edbe35b392b9af90f8cc9e251d">custm::vector::reserve</a></div><div class="ttdeci">void reserve(size_type new_cap)</div><div class="ttdoc">Rezervuoja naują (mažiausią) talpą</div><div class="ttdef"><b>Definition</b> <a href="#l00158">Vector.hpp:158</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_ad2fc3a41f68f5079ca26834a03454f28"><div class="ttname"><a href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">custm::vector::vector</a></div><div class="ttdeci">vector() noexcept</div><div class="ttdoc">Default konstruktorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">Vector.hpp:41</a></div></div>
-<div class="ttc" id="aclasscustm_1_1vector_html_adab2b5224d0f1ff88919a3faf70ad559"><div class="ttname"><a href="classcustm_1_1vector.html#adab2b5224d0f1ff88919a3faf70ad559">custm::vector::vector</a></div><div class="ttdeci">vector(vector &amp;&amp;other) noexcept</div><div class="ttdoc">Perkėlimo konstruktorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00063">Vector.hpp:63</a></div></div>
-<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="classvector.html">vector</a></div><div class="ttdoc">Dinaminio masyvo (vektoriaus) klasė</div><div class="ttdef"><b>Definition</b> <a href="#l00033">Vector.hpp:34</a></div></div>
-<div class="ttc" id="anamespacecustm_html"><div class="ttname"><a href="namespacecustm.html">custm</a></div><div class="ttdef"><b>Definition</b> <a href="#l00024">Vector.hpp:25</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a09c4e855957c04cb67b65af43cd89a09"><div class="ttname"><a href="classcustm_1_1vector.html#a09c4e855957c04cb67b65af43cd89a09">custm::vector::end</a></div><div class="ttdeci">T * end() noexcept</div><div class="ttdoc">Gražina iteratorių į paskutinį elementą</div><div class="ttdef"><b>Definition</b> <a href="#l00322">Vector.hpp:322</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a1058a37c55edb325da46bef753cc38ee"><div class="ttname"><a href="classcustm_1_1vector.html#a1058a37c55edb325da46bef753cc38ee">custm::vector::at</a></div><div class="ttdeci">const T &amp; at(size_type idx) const</div><div class="ttdef"><b>Definition</b> <a href="#l00295">Vector.hpp:295</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a37e2ffb61958d4d4c1ebe003929b8725"><div class="ttname"><a href="classcustm_1_1vector.html#a37e2ffb61958d4d4c1ebe003929b8725">custm::vector::operator=</a></div><div class="ttdeci">vector &amp; operator=(vector &amp;&amp;other) noexcept</div><div class="ttdoc">Perkėlimo priskyrimo operatorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00134">Vector.hpp:134</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a398a2b09b05583c2996193f9e01bd4e9"><div class="ttname"><a href="classcustm_1_1vector.html#a398a2b09b05583c2996193f9e01bd4e9">custm::vector::at</a></div><div class="ttdeci">T &amp; at(size_type idx)</div><div class="ttdoc">Pasiekia elementą su ribų tikrinimu.</div><div class="ttdef"><b>Definition</b> <a href="#l00286">Vector.hpp:286</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a3cc20d1d11cbdfdb857d348a113c4aa9"><div class="ttname"><a href="classcustm_1_1vector.html#a3cc20d1d11cbdfdb857d348a113c4aa9">custm::vector::front</a></div><div class="ttdeci">const T &amp; front() const</div><div class="ttdef"><b>Definition</b> <a href="#l00329">Vector.hpp:329</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a514c0ecd5e8e7e317a61f159a75f6e2a"><div class="ttname"><a href="classcustm_1_1vector.html#a514c0ecd5e8e7e317a61f159a75f6e2a">custm::vector::data</a></div><div class="ttdeci">T * data() noexcept</div><div class="ttdoc">Grąžina raw pointer į vidinį buferį</div><div class="ttdef"><b>Definition</b> <a href="#l00315">Vector.hpp:315</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a54bfd413c1406580c9e04ea30057ae5f"><div class="ttname"><a href="classcustm_1_1vector.html#a54bfd413c1406580c9e04ea30057ae5f">custm::vector::erase</a></div><div class="ttdeci">T * erase(T *first, T *last)</div><div class="ttdoc">Pašalina elementų intervalą (first, last)</div><div class="ttdef"><b>Definition</b> <a href="#l00242">Vector.hpp:242</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a5628de674ca406ae0ec9b4e6769dec1c"><div class="ttname"><a href="classcustm_1_1vector.html#a5628de674ca406ae0ec9b4e6769dec1c">custm::vector::pop_back</a></div><div class="ttdeci">void pop_back()</div><div class="ttdoc">Pašalina paskutinį elementą</div><div class="ttdef"><b>Definition</b> <a href="#l00180">Vector.hpp:180</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a5cc206481dd4c2822f3ca76fe4d11ea8"><div class="ttname"><a href="classcustm_1_1vector.html#a5cc206481dd4c2822f3ca76fe4d11ea8">custm::vector::operator[]</a></div><div class="ttdeci">T &amp; operator[](size_type idx)</div><div class="ttdoc">Pasiekia elementą be ribų tikrinimo.</div><div class="ttdef"><b>Definition</b> <a href="#l00277">Vector.hpp:277</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a5f2154a77cd8974769d7c0fb2e46aabd"><div class="ttname"><a href="classcustm_1_1vector.html#a5f2154a77cd8974769d7c0fb2e46aabd">custm::vector::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Grąžina elementų skaičių</div><div class="ttdef"><b>Definition</b> <a href="#l00258">Vector.hpp:258</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a668470d27a2ccc46450ec7519fc7b4b8"><div class="ttname"><a href="classcustm_1_1vector.html#a668470d27a2ccc46450ec7519fc7b4b8">custm::vector::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdoc">Patikrina, ar vektorius yra tuščias.</div><div class="ttdef"><b>Definition</b> <a href="#l00270">Vector.hpp:270</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a6755a5602f2255eb2539eec47a5478d1"><div class="ttname"><a href="classcustm_1_1vector.html#a6755a5602f2255eb2539eec47a5478d1">custm::vector::front</a></div><div class="ttdeci">T &amp; front()</div><div class="ttdoc">Grąžina nuorodą į pirmą elementą</div><div class="ttdef"><b>Definition</b> <a href="#l00328">Vector.hpp:328</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a7869d52d6c7d04391b3f4a2a00de3a5e"><div class="ttname"><a href="classcustm_1_1vector.html#a7869d52d6c7d04391b3f4a2a00de3a5e">custm::vector::end</a></div><div class="ttdeci">const T * end() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00323">Vector.hpp:323</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a833f9a53aa93ffa55cef4f06019474df"><div class="ttname"><a href="classcustm_1_1vector.html#a833f9a53aa93ffa55cef4f06019474df">custm::vector::begin</a></div><div class="ttdeci">const T * begin() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00309">Vector.hpp:309</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a83af6c75b5a6bf43b56d2fceb850251b"><div class="ttname"><a href="classcustm_1_1vector.html#a83af6c75b5a6bf43b56d2fceb850251b">custm::vector::clear</a></div><div class="ttdeci">void clear() noexcept</div><div class="ttdoc">Išvalo visus elementus.</div><div class="ttdef"><b>Definition</b> <a href="#l00231">Vector.hpp:231</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a8c23ee909052731c8d64bb61a61e2187"><div class="ttname"><a href="classcustm_1_1vector.html#a8c23ee909052731c8d64bb61a61e2187">custm::vector::~vector</a></div><div class="ttdeci">~vector() noexcept</div><div class="ttdoc">Destruktorius – sunaikina visus elementus ir atlaisvina atmintį</div><div class="ttdef"><b>Definition</b> <a href="#l00151">Vector.hpp:151</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a9377c6bbfed7ebf5377b92665c0c09e4"><div class="ttname"><a href="classcustm_1_1vector.html#a9377c6bbfed7ebf5377b92665c0c09e4">custm::vector::size_type</a></div><div class="ttdeci">std::size_t size_type</div><div class="ttdef"><b>Definition</b> <a href="#l00038">Vector.hpp:38</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a98dc121d7d1a4e74486c943128fc3c34"><div class="ttname"><a href="classcustm_1_1vector.html#a98dc121d7d1a4e74486c943128fc3c34">custm::vector::operator[]</a></div><div class="ttdeci">const T &amp; operator[](size_type idx) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00278">Vector.hpp:278</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a9affade730b59821b899dbe67a5d8cf6"><div class="ttname"><a href="classcustm_1_1vector.html#a9affade730b59821b899dbe67a5d8cf6">custm::vector::vector</a></div><div class="ttdeci">vector(InputIt first, InputIt last)</div><div class="ttdoc">Konstruktorius iš intervalo [first, last].</div><div class="ttdef"><b>Definition</b> <a href="#l00079">Vector.hpp:79</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a9dad8d8ef4dd386e12411d2092a0a0b7"><div class="ttname"><a href="classcustm_1_1vector.html#a9dad8d8ef4dd386e12411d2092a0a0b7">custm::vector::back</a></div><div class="ttdeci">T &amp; back()</div><div class="ttdoc">Grąžina nuorodą į paskutinį elementą</div><div class="ttdef"><b>Definition</b> <a href="#l00334">Vector.hpp:334</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a9dafcbea9ac61f617dee07bde7822575"><div class="ttname"><a href="classcustm_1_1vector.html#a9dafcbea9ac61f617dee07bde7822575">custm::vector::capacity</a></div><div class="ttdeci">size_type capacity() const noexcept</div><div class="ttdoc">Grąžina šiuo metu rezervuotą talpą</div><div class="ttdef"><b>Definition</b> <a href="#l00264">Vector.hpp:264</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a9dccdc6a2b7f2fd6b45edb7d1fd78b59"><div class="ttname"><a href="classcustm_1_1vector.html#a9dccdc6a2b7f2fd6b45edb7d1fd78b59">custm::vector::push_back</a></div><div class="ttdeci">void push_back(const T &amp;value)</div><div class="ttdoc">Prideda elementą į vektoriaus pabaigą</div><div class="ttdef"><b>Definition</b> <a href="#l00167">Vector.hpp:167</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_a9f5fa5e136c02275a09a8f180030dda3"><div class="ttname"><a href="classcustm_1_1vector.html#a9f5fa5e136c02275a09a8f180030dda3">custm::vector::vector</a></div><div class="ttdeci">vector(size_type count, const T &amp;value)</div><div class="ttdoc">Konstruktorius, sukuriantis vektorių su nurodytu elementų skaičiumi, bei visus elementus inicializuoj...</div><div class="ttdef"><b>Definition</b> <a href="#l00093">Vector.hpp:93</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_aab8ab1c39f38a62cb8609c70a2d32dc4"><div class="ttname"><a href="classcustm_1_1vector.html#aab8ab1c39f38a62cb8609c70a2d32dc4">custm::vector::operator=</a></div><div class="ttdeci">vector &amp; operator=(const vector &amp;other)</div><div class="ttdoc">Kopijavimo priskyrimo operatorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00119">Vector.hpp:119</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_ab5bcc3d696006b39e440c959007c8973"><div class="ttname"><a href="classcustm_1_1vector.html#ab5bcc3d696006b39e440c959007c8973">custm::vector::vector</a></div><div class="ttdeci">vector(const vector &amp;other)</div><div class="ttdoc">Kopijavimo konstruktorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Vector.hpp:50</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_ac563f772138e5050eef5eeb064207983"><div class="ttname"><a href="classcustm_1_1vector.html#ac563f772138e5050eef5eeb064207983">custm::vector::resize</a></div><div class="ttdeci">void resize(size_type count)</div><div class="ttdoc">Keičia vektoriaus dydį</div><div class="ttdef"><b>Definition</b> <a href="#l00211">Vector.hpp:211</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_ac76ad1cca6b303a7b53c95edeb02cc9f"><div class="ttname"><a href="classcustm_1_1vector.html#ac76ad1cca6b303a7b53c95edeb02cc9f">custm::vector::begin</a></div><div class="ttdeci">T * begin() noexcept</div><div class="ttdoc">Gražina iteratorių į pirmą elementą</div><div class="ttdef"><b>Definition</b> <a href="#l00308">Vector.hpp:308</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_ac9692383f8ed523ae2772e5ab2568f3a"><div class="ttname"><a href="classcustm_1_1vector.html#ac9692383f8ed523ae2772e5ab2568f3a">custm::vector::back</a></div><div class="ttdeci">const T &amp; back() const</div><div class="ttdef"><b>Definition</b> <a href="#l00335">Vector.hpp:335</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_aca8331edbe35b392b9af90f8cc9e251d"><div class="ttname"><a href="classcustm_1_1vector.html#aca8331edbe35b392b9af90f8cc9e251d">custm::vector::reserve</a></div><div class="ttdeci">void reserve(size_type new_cap)</div><div class="ttdoc">Rezervuoja naują (mažiausią) talpą</div><div class="ttdef"><b>Definition</b> <a href="#l00193">Vector.hpp:193</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_ad2fc3a41f68f5079ca26834a03454f28"><div class="ttname"><a href="classcustm_1_1vector.html#ad2fc3a41f68f5079ca26834a03454f28">custm::vector::vector</a></div><div class="ttdeci">vector() noexcept</div><div class="ttdoc">Numatytasis (default) konstruktorius – sukuria tuščią vector.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">Vector.hpp:43</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_adab2b5224d0f1ff88919a3faf70ad559"><div class="ttname"><a href="classcustm_1_1vector.html#adab2b5224d0f1ff88919a3faf70ad559">custm::vector::vector</a></div><div class="ttdeci">vector(vector &amp;&amp;other) noexcept</div><div class="ttdoc">Perkėlimo konstruktorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00065">Vector.hpp:65</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_aea38932d2511a217f066defa26ac6bcf"><div class="ttname"><a href="classcustm_1_1vector.html#aea38932d2511a217f066defa26ac6bcf">custm::vector::vector</a></div><div class="ttdeci">vector(std::initializer_list&lt; T &gt; init)</div><div class="ttdoc">Inicializavimo sąrašo konstruktorius.</div><div class="ttdef"><b>Definition</b> <a href="#l00111">Vector.hpp:111</a></div></div>
+<div class="ttc" id="aclasscustm_1_1vector_html_af7f43f8820549fed15cace76e9bb376f"><div class="ttname"><a href="classcustm_1_1vector.html#af7f43f8820549fed15cace76e9bb376f">custm::vector::data</a></div><div class="ttdeci">const T * data() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00316">Vector.hpp:316</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="classvector.html">vector</a></div><div class="ttdoc">Dinaminio masyvo (vector) klasė</div><div class="ttdef"><b>Definition</b> <a href="#l00035">Vector.hpp:36</a></div></div>
+<div class="ttc" id="anamespacecustm_html"><div class="ttname"><a href="namespacecustm.html">custm</a></div><div class="ttdef"><b>Definition</b> <a href="#l00026">Vector.hpp:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

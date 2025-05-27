@@ -1,5 +1,5 @@
 \doxysection{Vector.\+hpp}
-\hypertarget{_vector_8hpp_source}{}\label{_vector_8hpp_source}\index{C:/Users/Adomas/source/repos/OOP-\/Vector/include/Vector.hpp@{C:/Users/Adomas/source/repos/OOP-\/Vector/include/Vector.hpp}}
+\hypertarget{_vector_8hpp_source}{}\label{_vector_8hpp_source}\index{C:/Users/Administrator/source/repos/C++/OOP-\/Vector/include/Vector.hpp@{C:/Users/Administrator/source/repos/C++/OOP-\/Vector/include/Vector.hpp}}
 \mbox{\hyperlink{_vector_8hpp}{Eiti į šio failo dokumentaciją.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00001}00001\ }
@@ -19,175 +19,228 @@
 \DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
 \DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <utility>}}
 \DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <algorithm>}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00024}\mbox{\hyperlink{namespacecustm}{00024}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecustm}{custm}}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00025}00025\ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00033}\mbox{\hyperlink{classcustm_1_1vector}{00033}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_vector_8hpp_a7256d4c0727510c923bf85908422a424}{VECTOR\_API}}\ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00034}00034\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00036}\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ =\ std::size\_t;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00041}\mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{00041}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}()\ noexcept}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data\_(\textcolor{keywordtype}{nullptr}),\ size\_(0),\ capacity\_(0)\ \{\}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00048}\mbox{\hyperlink{classcustm_1_1vector_ab5bcc3d696006b39e440c959007c8973}{00048}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ab5bcc3d696006b39e440c959007c8973}{vector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&other)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data\_(nullptr),\ size\_(0),\ capacity\_(0)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.size\_)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_\ =\ new\ T[other.size\_];}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(other.data\_,\ other.data\_\ +\ other.size\_,\ data\_);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ capacity\_\ =\ other.size\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00063}\mbox{\hyperlink{classcustm_1_1vector_adab2b5224d0f1ff88919a3faf70ad559}{00063}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_adab2b5224d0f1ff88919a3faf70ad559}{vector}}(\mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&\&other)\ noexcept}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data\_(other.data\_),\ size\_(other.size\_),\ capacity\_(other.capacity\_)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ other.data\_\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ other.size\_\ =\ other.capacity\_\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputIt>}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00077}\mbox{\hyperlink{classcustm_1_1vector_a9affade730b59821b899dbe67a5d8cf6}{00077}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9affade730b59821b899dbe67a5d8cf6}{vector}}(InputIt\ first,\ InputIt\ last)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data\_(nullptr),\ size\_(0),\ capacity\_(0)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ first\ !=\ last;\ ++first)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9dccdc6a2b7f2fd6b45edb7d1fd78b59}{push\_back}}(*first);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00091}\mbox{\hyperlink{classcustm_1_1vector_aab8ab1c39f38a62cb8609c70a2d32dc4}{00091}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&\mbox{\hyperlink{classcustm_1_1vector_aab8ab1c39f38a62cb8609c70a2d32dc4}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&other)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ tmp(other);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ swap(tmp);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00100}00100\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00106}\mbox{\hyperlink{classcustm_1_1vector_a37e2ffb61958d4d4c1ebe003929b8725}{00106}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&\mbox{\hyperlink{classcustm_1_1vector_a37e2ffb61958d4d4c1ebe003929b8725}{operator=}}(\mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&\&other)\ \textcolor{keyword}{noexcept}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ data\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_\ =\ other.data\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ other.size\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ capacity\_\ =\ other.capacity\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ other.data\_\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ other.size\_\ =\ other.capacity\_\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00119}00119\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00123}\mbox{\hyperlink{classcustm_1_1vector_a8f9f7d4918bce014554618a4dddf6ffe}{00123}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a8f9f7d4918bce014554618a4dddf6ffe}{\string~vector}}()}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ data\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00127}00127\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00132}\mbox{\hyperlink{classcustm_1_1vector_a9dccdc6a2b7f2fd6b45edb7d1fd78b59}{00132}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_a9dccdc6a2b7f2fd6b45edb7d1fd78b59}{push\_back}}(\textcolor{keyword}{const}\ T\ \&value)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\_\ >=\ capacity\_)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grow();}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ data\_[size\_++]\ =\ value;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00140}00140\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00145}\mbox{\hyperlink{classcustm_1_1vector_a5628de674ca406ae0ec9b4e6769dec1c}{00145}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_a5628de674ca406ae0ec9b4e6769dec1c}{pop\_back}}()}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\_\ ==\ 0)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}pop\_back\ from\ empty\ vector"{}});}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/size\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00153}00153\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00158}\mbox{\hyperlink{classcustm_1_1vector_aca8331edbe35b392b9af90f8cc9e251d}{00158}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_aca8331edbe35b392b9af90f8cc9e251d}{reserve}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ new\_cap)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_cap\ <=\ capacity\_)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ T\ *new\_data\ =\ \textcolor{keyword}{new}\ T[new\_cap];}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ i\ =\ 0;\ i\ <\ size\_;\ ++i)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_data[i]\ =\ std::move(data\_[i]);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ data\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ data\_\ =\ new\_data;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ capacity\_\ =\ new\_cap;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00171}00171\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00176}\mbox{\hyperlink{classcustm_1_1vector_ac563f772138e5050eef5eeb064207983}{00176}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_ac563f772138e5050eef5eeb064207983}{resize}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ count)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ <\ size\_)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ count;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ >\ size\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00026}\mbox{\hyperlink{namespacecustm}{00026}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecustm}{custm}}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00035}\mbox{\hyperlink{classcustm_1_1vector}{00035}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_vector_8hpp_a7256d4c0727510c923bf85908422a424}{VECTOR\_API}}\ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00038}\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ =\ std::size\_t;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00043}\mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{00043}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}()\ noexcept}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data\_(\textcolor{keywordtype}{nullptr}),\ size\_(0),\ capacity\_(0)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00050}\mbox{\hyperlink{classcustm_1_1vector_ab5bcc3d696006b39e440c959007c8973}{00050}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ab5bcc3d696006b39e440c959007c8973}{vector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&other)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data\_(nullptr),\ size\_(0),\ capacity\_(0)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.size\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_\ =\ new\ T[other.size\_];}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(other.data\_,\ other.data\_\ +\ other.size\_,\ data\_);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ capacity\_\ =\ other.size\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00065}\mbox{\hyperlink{classcustm_1_1vector_adab2b5224d0f1ff88919a3faf70ad559}{00065}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_adab2b5224d0f1ff88919a3faf70ad559}{vector}}(\mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&\&other)\ noexcept}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data\_(other.data\_),\ size\_(other.size\_),\ capacity\_(other.capacity\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ other.data\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ other.size\_\ =\ other.capacity\_\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputIt>}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00079}\mbox{\hyperlink{classcustm_1_1vector_a9affade730b59821b899dbe67a5d8cf6}{00079}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9affade730b59821b899dbe67a5d8cf6}{vector}}(InputIt\ first,\ InputIt\ last)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data\_(nullptr),\ size\_(0),\ capacity\_(0)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ first\ !=\ last;\ ++first)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9dccdc6a2b7f2fd6b45edb7d1fd78b59}{push\_back}}(*first);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00093}\mbox{\hyperlink{classcustm_1_1vector_a9f5fa5e136c02275a09a8f180030dda3}{00093}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9f5fa5e136c02275a09a8f180030dda3}{vector}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ count,\ \textcolor{keyword}{const}\ T\ \&value)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data\_(nullptr),\ size\_(0),\ capacity\_(0)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_aca8331edbe35b392b9af90f8cc9e251d}{reserve}}(count);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ i\ =\ 0;\ i\ <\ count;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_[i]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ count;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00111}\mbox{\hyperlink{classcustm_1_1vector_aea38932d2511a217f066defa26ac6bcf}{00111}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_aea38932d2511a217f066defa26ac6bcf}{vector}}(std::initializer\_list<T>\ init)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}(init.\mbox{\hyperlink{classcustm_1_1vector_ac76ad1cca6b303a7b53c95edeb02cc9f}{begin}}(),\ init.\mbox{\hyperlink{classcustm_1_1vector_a09c4e855957c04cb67b65af43cd89a09}{end}}())\ \{\}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00119}\mbox{\hyperlink{classcustm_1_1vector_aab8ab1c39f38a62cb8609c70a2d32dc4}{00119}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&\mbox{\hyperlink{classcustm_1_1vector_aab8ab1c39f38a62cb8609c70a2d32dc4}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&other)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ tmp(other);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ swap(tmp);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00134}\mbox{\hyperlink{classcustm_1_1vector_a37e2ffb61958d4d4c1ebe003929b8725}{00134}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&\mbox{\hyperlink{classcustm_1_1vector_a37e2ffb61958d4d4c1ebe003929b8725}{operator=}}(\mbox{\hyperlink{classcustm_1_1vector_ad2fc3a41f68f5079ca26834a03454f28}{vector}}\ \&\&other)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ data\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_\ =\ other.data\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ other.size\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ capacity\_\ =\ other.capacity\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ other.data\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ other.size\_\ =\ other.capacity\_\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00151}\mbox{\hyperlink{classcustm_1_1vector_a8c23ee909052731c8d64bb61a61e2187}{00151}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a8c23ee909052731c8d64bb61a61e2187}{\string~vector}}()\ noexcept}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!data\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (!std::is\_trivially\_destructible\_v<T>)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ i\ =\ size\_;\ i-\/-\/\ >\ 0;)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_[i].\string~T();}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ (data\_);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00167}\mbox{\hyperlink{classcustm_1_1vector_a9dccdc6a2b7f2fd6b45edb7d1fd78b59}{00167}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_a9dccdc6a2b7f2fd6b45edb7d1fd78b59}{push\_back}}(\textcolor{keyword}{const}\ T\ \&value)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\_\ >=\ capacity\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grow();}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ data\_[size\_++]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00180}\mbox{\hyperlink{classcustm_1_1vector_a5628de674ca406ae0ec9b4e6769dec1c}{00180}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_a5628de674ca406ae0ec9b4e6769dec1c}{pop\_back}}()}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\_\ ==\ 0)}
 \DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_aca8331edbe35b392b9af90f8cc9e251d}{reserve}}(count);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ i\ =\ size\_;\ i\ <\ count;\ ++i)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_[i]\ =\ T();}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ count;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00192}00192\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00196}\mbox{\hyperlink{classcustm_1_1vector_a83af6c75b5a6bf43b56d2fceb850251b}{00196}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_a83af6c75b5a6bf43b56d2fceb850251b}{clear}}()\ noexcept}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00200}00200\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00207}\mbox{\hyperlink{classcustm_1_1vector_a54bfd413c1406580c9e04ea30057ae5f}{00207}}\ \ \ \ \ \ \ \ \ T\ *\mbox{\hyperlink{classcustm_1_1vector_a54bfd413c1406580c9e04ea30057ae5f}{erase}}(T\ *first,\ T\ *last)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ start\ =\ first\ -\/\ data\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ count\ =\ last\ -\/\ first;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ i\ =\ start;\ i\ +\ count\ <\ size\_;\ ++i)}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_[i]\ =\ std::move(data\_[i\ +\ count]);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ -\/=\ count;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data\_\ +\ start;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00218}00218\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00223}\mbox{\hyperlink{classcustm_1_1vector_a5f2154a77cd8974769d7c0fb2e46aabd}{00223}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ \mbox{\hyperlink{classcustm_1_1vector_a5f2154a77cd8974769d7c0fb2e46aabd}{size}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ size\_;\ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00224}00224\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00229}\mbox{\hyperlink{classcustm_1_1vector_a9dafcbea9ac61f617dee07bde7822575}{00229}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ \mbox{\hyperlink{classcustm_1_1vector_a9dafcbea9ac61f617dee07bde7822575}{capacity}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ capacity\_;\ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00230}00230\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00235}\mbox{\hyperlink{classcustm_1_1vector_a668470d27a2ccc46450ec7519fc7b4b8}{00235}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcustm_1_1vector_a668470d27a2ccc46450ec7519fc7b4b8}{empty}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ size\_\ ==\ 0;\ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00236}00236\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00242}\mbox{\hyperlink{classcustm_1_1vector_a5cc206481dd4c2822f3ca76fe4d11ea8}{00242}}\ \ \ \ \ \ \ \ \ T\ \&\mbox{\hyperlink{classcustm_1_1vector_a5cc206481dd4c2822f3ca76fe4d11ea8}{operator[]}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ idx)\ \{\ \textcolor{keywordflow}{return}\ data\_[idx];\ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00243}\mbox{\hyperlink{classcustm_1_1vector_a98dc121d7d1a4e74486c943128fc3c34}{00243}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\mbox{\hyperlink{classcustm_1_1vector_a98dc121d7d1a4e74486c943128fc3c34}{operator[]}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ idx)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ data\_[idx];\ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00244}00244\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00249}\mbox{\hyperlink{classcustm_1_1vector_ac76ad1cca6b303a7b53c95edeb02cc9f}{00249}}\ \ \ \ \ \ \ \ \ T\ *\mbox{\hyperlink{classcustm_1_1vector_ac76ad1cca6b303a7b53c95edeb02cc9f}{begin}}()\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_;\ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00250}\mbox{\hyperlink{classcustm_1_1vector_a833f9a53aa93ffa55cef4f06019474df}{00250}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ *\mbox{\hyperlink{classcustm_1_1vector_a833f9a53aa93ffa55cef4f06019474df}{begin}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_;\ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00251}00251\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00256}\mbox{\hyperlink{classcustm_1_1vector_a09c4e855957c04cb67b65af43cd89a09}{00256}}\ \ \ \ \ \ \ \ \ T\ *\mbox{\hyperlink{classcustm_1_1vector_a09c4e855957c04cb67b65af43cd89a09}{end}}()\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_\ +\ size\_;\ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00257}\mbox{\hyperlink{classcustm_1_1vector_a7869d52d6c7d04391b3f4a2a00de3a5e}{00257}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ *\mbox{\hyperlink{classcustm_1_1vector_a7869d52d6c7d04391b3f4a2a00de3a5e}{end}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_\ +\ size\_;\ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00258}00258\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00259}00259\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ grow()}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ size\_type\ new\_cap\ =\ capacity\_\ ?\ capacity\_\ *\ 2\ :\ 1;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ reserve(new\_cap);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00268}00268\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ swap(\mbox{\hyperlink{classvector}{vector}}\ \&other)\ \textcolor{keyword}{noexcept}}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(data\_,\ other.data\_);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(size\_,\ other.size\_);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(capacity\_,\ other.capacity\_);}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}pop\_back\ from\ empty\ vector"{}});}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/size\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00193}\mbox{\hyperlink{classcustm_1_1vector_aca8331edbe35b392b9af90f8cc9e251d}{00193}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_aca8331edbe35b392b9af90f8cc9e251d}{reserve}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ new\_cap)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_cap\ <=\ capacity\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ T\ *new\_data\ =\ \textcolor{keyword}{new}\ T[new\_cap];}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ i\ =\ 0;\ i\ <\ size\_;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_data[i]\ =\ std::move(data\_[i]);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ data\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ data\_\ =\ new\_data;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ capacity\_\ =\ new\_cap;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00211}\mbox{\hyperlink{classcustm_1_1vector_ac563f772138e5050eef5eeb064207983}{00211}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_ac563f772138e5050eef5eeb064207983}{resize}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ count)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ <\ size\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ count;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ >\ size\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_aca8331edbe35b392b9af90f8cc9e251d}{reserve}}(count);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ i\ =\ size\_;\ i\ <\ count;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_[i]\ =\ T();}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ count;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00231}\mbox{\hyperlink{classcustm_1_1vector_a83af6c75b5a6bf43b56d2fceb850251b}{00231}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcustm_1_1vector_a83af6c75b5a6bf43b56d2fceb850251b}{clear}}()\ noexcept}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00242}\mbox{\hyperlink{classcustm_1_1vector_a54bfd413c1406580c9e04ea30057ae5f}{00242}}\ \ \ \ \ \ \ \ \ T\ *\mbox{\hyperlink{classcustm_1_1vector_a54bfd413c1406580c9e04ea30057ae5f}{erase}}(T\ *first,\ T\ *last)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ start\ =\ first\ -\/\ data\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ count\ =\ last\ -\/\ first;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ i\ =\ start;\ i\ +\ count\ <\ size\_;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_[i]\ =\ std::move(data\_[i\ +\ count]);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ size\_\ -\/=\ count;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data\_\ +\ start;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00258}\mbox{\hyperlink{classcustm_1_1vector_a5f2154a77cd8974769d7c0fb2e46aabd}{00258}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ \mbox{\hyperlink{classcustm_1_1vector_a5f2154a77cd8974769d7c0fb2e46aabd}{size}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ size\_;\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00264}\mbox{\hyperlink{classcustm_1_1vector_a9dafcbea9ac61f617dee07bde7822575}{00264}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ \mbox{\hyperlink{classcustm_1_1vector_a9dafcbea9ac61f617dee07bde7822575}{capacity}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ capacity\_;\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00270}\mbox{\hyperlink{classcustm_1_1vector_a668470d27a2ccc46450ec7519fc7b4b8}{00270}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcustm_1_1vector_a668470d27a2ccc46450ec7519fc7b4b8}{empty}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ size\_\ ==\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00277}\mbox{\hyperlink{classcustm_1_1vector_a5cc206481dd4c2822f3ca76fe4d11ea8}{00277}}\ \ \ \ \ \ \ \ \ T\ \&\mbox{\hyperlink{classcustm_1_1vector_a5cc206481dd4c2822f3ca76fe4d11ea8}{operator[]}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ idx)\ \{\ \textcolor{keywordflow}{return}\ data\_[idx];\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00278}\mbox{\hyperlink{classcustm_1_1vector_a98dc121d7d1a4e74486c943128fc3c34}{00278}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\mbox{\hyperlink{classcustm_1_1vector_a98dc121d7d1a4e74486c943128fc3c34}{operator[]}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ idx)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ data\_[idx];\ \}}
 \DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00279}00279\ }
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00280}00280\ \ \ \ \ \ \ \ \ T\ *data\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00281}00281\ \ \ \ \ \ \ \ \ size\_type\ size\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00282}00282\ \ \ \ \ \ \ \ \ size\_type\ capacity\_;}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00283}00283\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00284}00284\ \}\ \textcolor{comment}{//\ namespace\ custm}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00286}\mbox{\hyperlink{classcustm_1_1vector_a398a2b09b05583c2996193f9e01bd4e9}{00286}}\ \ \ \ \ \ \ \ \ T\ \&\mbox{\hyperlink{classcustm_1_1vector_a398a2b09b05583c2996193f9e01bd4e9}{at}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ idx)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idx\ >=\ size\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}at():\ index\ out\ of\ range"{}});}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data\_[idx];}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00295}\mbox{\hyperlink{classcustm_1_1vector_a1058a37c55edb325da46bef753cc38ee}{00295}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\mbox{\hyperlink{classcustm_1_1vector_a1058a37c55edb325da46bef753cc38ee}{at}}(\mbox{\hyperlink{classcustm_1_1vector_a9377c6bbfed7ebf5377b92665c0c09e4}{size\_type}}\ idx)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00296}00296\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idx\ >=\ size\_)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}at():\ index\ out\ of\ range"{}});}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data\_[idx];}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00308}\mbox{\hyperlink{classcustm_1_1vector_ac76ad1cca6b303a7b53c95edeb02cc9f}{00308}}\ \ \ \ \ \ \ \ \ T\ *\mbox{\hyperlink{classcustm_1_1vector_ac76ad1cca6b303a7b53c95edeb02cc9f}{begin}}()\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_;\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00309}\mbox{\hyperlink{classcustm_1_1vector_a833f9a53aa93ffa55cef4f06019474df}{00309}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ *\mbox{\hyperlink{classcustm_1_1vector_a833f9a53aa93ffa55cef4f06019474df}{begin}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_;\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00315}\mbox{\hyperlink{classcustm_1_1vector_a514c0ecd5e8e7e317a61f159a75f6e2a}{00315}}\ \ \ \ \ \ \ \ \ T\ *\mbox{\hyperlink{classcustm_1_1vector_a514c0ecd5e8e7e317a61f159a75f6e2a}{data}}()\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_;\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00316}\mbox{\hyperlink{classcustm_1_1vector_af7f43f8820549fed15cace76e9bb376f}{00316}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ *\mbox{\hyperlink{classcustm_1_1vector_af7f43f8820549fed15cace76e9bb376f}{data}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_;\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00322}\mbox{\hyperlink{classcustm_1_1vector_a09c4e855957c04cb67b65af43cd89a09}{00322}}\ \ \ \ \ \ \ \ \ T\ *\mbox{\hyperlink{classcustm_1_1vector_a09c4e855957c04cb67b65af43cd89a09}{end}}()\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_\ +\ size\_;\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00323}\mbox{\hyperlink{classcustm_1_1vector_a7869d52d6c7d04391b3f4a2a00de3a5e}{00323}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ *\mbox{\hyperlink{classcustm_1_1vector_a7869d52d6c7d04391b3f4a2a00de3a5e}{end}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ data\_\ +\ size\_;\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00328}\mbox{\hyperlink{classcustm_1_1vector_a6755a5602f2255eb2539eec47a5478d1}{00328}}\ \ \ \ \ \ \ \ \ T\ \&\mbox{\hyperlink{classcustm_1_1vector_a6755a5602f2255eb2539eec47a5478d1}{front}}()\ \{\ \textcolor{keywordflow}{return}\ data\_[0];\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00329}\mbox{\hyperlink{classcustm_1_1vector_a3cc20d1d11cbdfdb857d348a113c4aa9}{00329}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\mbox{\hyperlink{classcustm_1_1vector_a3cc20d1d11cbdfdb857d348a113c4aa9}{front}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ data\_[0];\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00334}\mbox{\hyperlink{classcustm_1_1vector_a9dad8d8ef4dd386e12411d2092a0a0b7}{00334}}\ \ \ \ \ \ \ \ \ T\ \&\mbox{\hyperlink{classcustm_1_1vector_a9dad8d8ef4dd386e12411d2092a0a0b7}{back}}()\ \{\ \textcolor{keywordflow}{return}\ data\_[size\_\ -\/\ 1];\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00335}\mbox{\hyperlink{classcustm_1_1vector_ac9692383f8ed523ae2772e5ab2568f3a}{00335}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\mbox{\hyperlink{classcustm_1_1vector_ac9692383f8ed523ae2772e5ab2568f3a}{back}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ data\_[size\_\ -\/\ 1];\ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00336}00336\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00337}00337\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ grow()}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ size\_type\ new\_cap\ =\ capacity\_\ ?\ capacity\_\ *\ 2\ :\ 1;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ reserve(new\_cap);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ swap(\mbox{\hyperlink{classvector}{vector}}\ \&other)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(data\_,\ other.data\_);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(size\_,\ other.size\_);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(capacity\_,\ other.capacity\_);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00358}00358\ \ \ \ \ \ \ \ \ T\ *data\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00359}00359\ \ \ \ \ \ \ \ \ size\_type\ size\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00360}00360\ \ \ \ \ \ \ \ \ size\_type\ capacity\_;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00361}00361\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00362}00362\ \}\ \textcolor{comment}{//\ namespace\ custm}}
 
 \end{DoxyCode}

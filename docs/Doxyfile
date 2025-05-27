@@ -74,7 +74,7 @@ PROJECT_ICON           =
 # entered, it will be relative to the location where Doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = C:/Users/Adomas/source/repos/OOP-Vector/docs
+OUTPUT_DIRECTORY       = C:/Users/Administrator/source/repos/C++/OOP-Vector/docs
 
 # If the CREATE_SUBDIRS tag is set to YES then Doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format
@@ -991,9 +991,8 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = ../src/Vector.cpp \
-                         ../tests/vector_tests.cpp \
-                         ../include/Vector.hpp
+INPUT                  = ../include/Vector.hpp \
+                         ../src/Vector.cpp
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1099,17 +1098,7 @@ RECURSIVE              = NO
 # run.
 
 EXCLUDE                = ../tests/catch_amalgamated.cpp \
-                         ../tests/catch_amalgamated.hpp \
-                         ../tests/OOP3/OOP3.cpp \
-                         ../tests/OOP3/pushback_test.cpp \
-                         ../tests/OOP3/time_test.cpp \
-                         ../tests/OOP3/lib/isvedimas.cpp \
-                         ../tests/OOP3/lib/isvedimas.h \
-                         ../tests/OOP3/lib/main_lib.cpp \
-                         ../tests/OOP3/lib/main_lib.h \
-                         ../tests/OOP3/lib/studentas.cpp \
-                         ../tests/OOP3/lib/studentas.h \
-                         ../tests/OOP3/lib/zmogus.h
+                         ../tests/catch_amalgamated.hpp
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

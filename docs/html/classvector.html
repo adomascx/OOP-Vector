@@ -111,7 +111,7 @@ $(function(){initNavTree('classvector.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>Dinaminio masyvo (vektoriaus) klasė  
+<p>Dinaminio masyvo (vector) klasė  
  <a href="#details">Daugiau...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_vector_8hpp_source.html">Vector.hpp</a>&gt;</code></p>
@@ -124,7 +124,7 @@ Vieši Tipai</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Vieši Metodai</h2></td></tr>
 <tr class="memitem:ad2fc3a41f68f5079ca26834a03454f28" id="r_ad2fc3a41f68f5079ca26834a03454f28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2fc3a41f68f5079ca26834a03454f28">vector</a> () noexcept</td></tr>
-<tr class="memdesc:ad2fc3a41f68f5079ca26834a03454f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default konstruktorius.  <br /></td></tr>
+<tr class="memdesc:ad2fc3a41f68f5079ca26834a03454f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numatytasis (default) konstruktorius – sukuria tuščią vector.  <br /></td></tr>
 <tr class="separator:ad2fc3a41f68f5079ca26834a03454f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5bcc3d696006b39e440c959007c8973" id="r_ab5bcc3d696006b39e440c959007c8973"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5bcc3d696006b39e440c959007c8973">vector</a> (const <a class="el" href="classcustm_1_1vector.html">vector</a> &amp;other)</td></tr>
 <tr class="memdesc:ab5bcc3d696006b39e440c959007c8973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kopijavimo konstruktorius.  <br /></td></tr>
@@ -136,15 +136,21 @@ Vieši Metodai</h2></td></tr>
 <tr class="memitem:a9affade730b59821b899dbe67a5d8cf6"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9affade730b59821b899dbe67a5d8cf6">vector</a> (InputIt first, InputIt last)</td></tr>
 <tr class="memdesc:a9affade730b59821b899dbe67a5d8cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktorius iš intervalo [first, last].  <br /></td></tr>
 <tr class="separator:a9affade730b59821b899dbe67a5d8cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5fa5e136c02275a09a8f180030dda3" id="r_a9f5fa5e136c02275a09a8f180030dda3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f5fa5e136c02275a09a8f180030dda3">vector</a> (<a class="el" href="#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> count, const T &amp;value)</td></tr>
+<tr class="memdesc:a9f5fa5e136c02275a09a8f180030dda3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktorius, sukuriantis vektorių su nurodytu elementų skaičiumi, bei visus elementus inicializuojant duota verte.  <br /></td></tr>
+<tr class="separator:a9f5fa5e136c02275a09a8f180030dda3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea38932d2511a217f066defa26ac6bcf" id="r_aea38932d2511a217f066defa26ac6bcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea38932d2511a217f066defa26ac6bcf">vector</a> (std::initializer_list&lt; T &gt; init)</td></tr>
+<tr class="memdesc:aea38932d2511a217f066defa26ac6bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializavimo sąrašo konstruktorius.  <br /></td></tr>
+<tr class="separator:aea38932d2511a217f066defa26ac6bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab8ab1c39f38a62cb8609c70a2d32dc4" id="r_aab8ab1c39f38a62cb8609c70a2d32dc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcustm_1_1vector.html">vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab8ab1c39f38a62cb8609c70a2d32dc4">operator=</a> (const <a class="el" href="classcustm_1_1vector.html">vector</a> &amp;other)</td></tr>
 <tr class="memdesc:aab8ab1c39f38a62cb8609c70a2d32dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kopijavimo priskyrimo operatorius.  <br /></td></tr>
 <tr class="separator:aab8ab1c39f38a62cb8609c70a2d32dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37e2ffb61958d4d4c1ebe003929b8725" id="r_a37e2ffb61958d4d4c1ebe003929b8725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcustm_1_1vector.html">vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37e2ffb61958d4d4c1ebe003929b8725">operator=</a> (<a class="el" href="classcustm_1_1vector.html">vector</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a37e2ffb61958d4d4c1ebe003929b8725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perkėlimo priskyrimo operatorius.  <br /></td></tr>
 <tr class="separator:a37e2ffb61958d4d4c1ebe003929b8725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f9f7d4918bce014554618a4dddf6ffe" id="r_a8f9f7d4918bce014554618a4dddf6ffe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f9f7d4918bce014554618a4dddf6ffe">~vector</a> ()</td></tr>
-<tr class="memdesc:a8f9f7d4918bce014554618a4dddf6ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktorius, atlaisvina atmintį  <br /></td></tr>
-<tr class="separator:a8f9f7d4918bce014554618a4dddf6ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c23ee909052731c8d64bb61a61e2187" id="r_a8c23ee909052731c8d64bb61a61e2187"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c23ee909052731c8d64bb61a61e2187">~vector</a> () noexcept</td></tr>
+<tr class="memdesc:a8c23ee909052731c8d64bb61a61e2187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktorius – sunaikina visus elementus ir atlaisvina atmintį  <br /></td></tr>
+<tr class="separator:a8c23ee909052731c8d64bb61a61e2187"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dccdc6a2b7f2fd6b45edb7d1fd78b59" id="r_a9dccdc6a2b7f2fd6b45edb7d1fd78b59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dccdc6a2b7f2fd6b45edb7d1fd78b59">push_back</a> (const T &amp;value)</td></tr>
 <tr class="memdesc:a9dccdc6a2b7f2fd6b45edb7d1fd78b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prideda elementą į vektoriaus pabaigą  <br /></td></tr>
 <tr class="separator:a9dccdc6a2b7f2fd6b45edb7d1fd78b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,13 +167,13 @@ Vieši Metodai</h2></td></tr>
 <tr class="memdesc:a83af6c75b5a6bf43b56d2fceb850251b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Išvalo visus elementus.  <br /></td></tr>
 <tr class="separator:a83af6c75b5a6bf43b56d2fceb850251b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54bfd413c1406580c9e04ea30057ae5f" id="r_a54bfd413c1406580c9e04ea30057ae5f"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54bfd413c1406580c9e04ea30057ae5f">erase</a> (T *first, T *last)</td></tr>
-<tr class="memdesc:a54bfd413c1406580c9e04ea30057ae5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pašalina elementų intervalą [first, last)  <br /></td></tr>
+<tr class="memdesc:a54bfd413c1406580c9e04ea30057ae5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pašalina elementų intervalą (first, last)  <br /></td></tr>
 <tr class="separator:a54bfd413c1406580c9e04ea30057ae5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f2154a77cd8974769d7c0fb2e46aabd" id="r_a5f2154a77cd8974769d7c0fb2e46aabd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f2154a77cd8974769d7c0fb2e46aabd">size</a> () const noexcept</td></tr>
 <tr class="memdesc:a5f2154a77cd8974769d7c0fb2e46aabd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grąžina elementų skaičių  <br /></td></tr>
 <tr class="separator:a5f2154a77cd8974769d7c0fb2e46aabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dafcbea9ac61f617dee07bde7822575" id="r_a9dafcbea9ac61f617dee07bde7822575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dafcbea9ac61f617dee07bde7822575">capacity</a> () const noexcept</td></tr>
-<tr class="memdesc:a9dafcbea9ac61f617dee07bde7822575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grąžina talpą  <br /></td></tr>
+<tr class="memdesc:a9dafcbea9ac61f617dee07bde7822575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grąžina šiuo metu rezervuotą talpą  <br /></td></tr>
 <tr class="separator:a9dafcbea9ac61f617dee07bde7822575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a668470d27a2ccc46450ec7519fc7b4b8" id="r_a668470d27a2ccc46450ec7519fc7b4b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a668470d27a2ccc46450ec7519fc7b4b8">empty</a> () const noexcept</td></tr>
 <tr class="memdesc:a668470d27a2ccc46450ec7519fc7b4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Patikrina, ar vektorius yra tuščias.  <br /></td></tr>
@@ -177,20 +183,40 @@ Vieši Metodai</h2></td></tr>
 <tr class="separator:a5cc206481dd4c2822f3ca76fe4d11ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98dc121d7d1a4e74486c943128fc3c34" id="r_a98dc121d7d1a4e74486c943128fc3c34"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98dc121d7d1a4e74486c943128fc3c34">operator[]</a> (<a class="el" href="#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> idx) const noexcept</td></tr>
 <tr class="separator:a98dc121d7d1a4e74486c943128fc3c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a398a2b09b05583c2996193f9e01bd4e9" id="r_a398a2b09b05583c2996193f9e01bd4e9"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a398a2b09b05583c2996193f9e01bd4e9">at</a> (<a class="el" href="#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> idx)</td></tr>
+<tr class="memdesc:a398a2b09b05583c2996193f9e01bd4e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pasiekia elementą su ribų tikrinimu.  <br /></td></tr>
+<tr class="separator:a398a2b09b05583c2996193f9e01bd4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1058a37c55edb325da46bef753cc38ee" id="r_a1058a37c55edb325da46bef753cc38ee"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1058a37c55edb325da46bef753cc38ee">at</a> (<a class="el" href="#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a> idx) const</td></tr>
+<tr class="separator:a1058a37c55edb325da46bef753cc38ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac76ad1cca6b303a7b53c95edeb02cc9f" id="r_ac76ad1cca6b303a7b53c95edeb02cc9f"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac76ad1cca6b303a7b53c95edeb02cc9f">begin</a> () noexcept</td></tr>
 <tr class="memdesc:ac76ad1cca6b303a7b53c95edeb02cc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gražina iteratorių į pirmą elementą  <br /></td></tr>
 <tr class="separator:ac76ad1cca6b303a7b53c95edeb02cc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a833f9a53aa93ffa55cef4f06019474df" id="r_a833f9a53aa93ffa55cef4f06019474df"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a833f9a53aa93ffa55cef4f06019474df">begin</a> () const noexcept</td></tr>
 <tr class="separator:a833f9a53aa93ffa55cef4f06019474df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a514c0ecd5e8e7e317a61f159a75f6e2a" id="r_a514c0ecd5e8e7e317a61f159a75f6e2a"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a514c0ecd5e8e7e317a61f159a75f6e2a">data</a> () noexcept</td></tr>
+<tr class="memdesc:a514c0ecd5e8e7e317a61f159a75f6e2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grąžina raw pointer į vidinį buferį  <br /></td></tr>
+<tr class="separator:a514c0ecd5e8e7e317a61f159a75f6e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f43f8820549fed15cace76e9bb376f" id="r_af7f43f8820549fed15cace76e9bb376f"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7f43f8820549fed15cace76e9bb376f">data</a> () const noexcept</td></tr>
+<tr class="separator:af7f43f8820549fed15cace76e9bb376f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09c4e855957c04cb67b65af43cd89a09" id="r_a09c4e855957c04cb67b65af43cd89a09"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09c4e855957c04cb67b65af43cd89a09">end</a> () noexcept</td></tr>
 <tr class="memdesc:a09c4e855957c04cb67b65af43cd89a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gražina iteratorių į paskutinį elementą  <br /></td></tr>
 <tr class="separator:a09c4e855957c04cb67b65af43cd89a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7869d52d6c7d04391b3f4a2a00de3a5e" id="r_a7869d52d6c7d04391b3f4a2a00de3a5e"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7869d52d6c7d04391b3f4a2a00de3a5e">end</a> () const noexcept</td></tr>
 <tr class="separator:a7869d52d6c7d04391b3f4a2a00de3a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6755a5602f2255eb2539eec47a5478d1" id="r_a6755a5602f2255eb2539eec47a5478d1"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6755a5602f2255eb2539eec47a5478d1">front</a> ()</td></tr>
+<tr class="memdesc:a6755a5602f2255eb2539eec47a5478d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grąžina nuorodą į pirmą elementą  <br /></td></tr>
+<tr class="separator:a6755a5602f2255eb2539eec47a5478d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc20d1d11cbdfdb857d348a113c4aa9" id="r_a3cc20d1d11cbdfdb857d348a113c4aa9"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cc20d1d11cbdfdb857d348a113c4aa9">front</a> () const</td></tr>
+<tr class="separator:a3cc20d1d11cbdfdb857d348a113c4aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dad8d8ef4dd386e12411d2092a0a0b7" id="r_a9dad8d8ef4dd386e12411d2092a0a0b7"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dad8d8ef4dd386e12411d2092a0a0b7">back</a> ()</td></tr>
+<tr class="memdesc:a9dad8d8ef4dd386e12411d2092a0a0b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grąžina nuorodą į paskutinį elementą  <br /></td></tr>
+<tr class="separator:a9dad8d8ef4dd386e12411d2092a0a0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9692383f8ed523ae2772e5ab2568f3a" id="r_ac9692383f8ed523ae2772e5ab2568f3a"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9692383f8ed523ae2772e5ab2568f3a">back</a> () const</td></tr>
+<tr class="separator:ac9692383f8ed523ae2772e5ab2568f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Smulkus aprašymas</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class vector&lt; T &gt;</div><p>Dinaminio masyvo (vektoriaus) klasė </p>
+class vector&lt; T &gt;</div><p>Dinaminio masyvo (vector) klasė </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>elemento tipas </td></tr>
@@ -198,7 +224,7 @@ class vector&lt; T &gt;</div><p>Dinaminio masyvo (vektoriaus) klasė </p>
   </dd>
 </dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00033">33</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00035">35</a>.</p>
 </div><h2 class="groupheader">Tipo Aprašymo Dokumentacija</h2>
 <a id="a9377c6bbfed7ebf5377b92665c0c09e4" name="a9377c6bbfed7ebf5377b92665c0c09e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9377c6bbfed7ebf5377b92665c0c09e4">&#9670;&#160;</a></span>size_type</h2>
@@ -214,13 +240,13 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00036">36</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00038">38</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Konstruktoriaus ir Destruktoriaus Dokumentacija</h2>
 <a id="ad2fc3a41f68f5079ca26834a03454f28" name="ad2fc3a41f68f5079ca26834a03454f28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2fc3a41f68f5079ca26834a03454f28">&#9670;&#160;</a></span>vector() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fc3a41f68f5079ca26834a03454f28">&#9670;&#160;</a></span>vector() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -244,14 +270,14 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Default konstruktorius. </p>
+<p>Numatytasis (default) konstruktorius – sukuria tuščią vector. </p>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00041">41</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00043">43</a>.</p>
 
 </div>
 </div>
 <a id="ab5bcc3d696006b39e440c959007c8973" name="ab5bcc3d696006b39e440c959007c8973"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5bcc3d696006b39e440c959007c8973">&#9670;&#160;</a></span>vector() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5bcc3d696006b39e440c959007c8973">&#9670;&#160;</a></span>vector() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,12 +309,12 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00048">48</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00050">50</a>.</p>
 
 </div>
 </div>
 <a id="adab2b5224d0f1ff88919a3faf70ad559" name="adab2b5224d0f1ff88919a3faf70ad559"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adab2b5224d0f1ff88919a3faf70ad559">&#9670;&#160;</a></span>vector() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adab2b5224d0f1ff88919a3faf70ad559">&#9670;&#160;</a></span>vector() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,12 +346,12 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00063">63</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00065">65</a>.</p>
 
 </div>
 </div>
 <a id="a9affade730b59821b899dbe67a5d8cf6" name="a9affade730b59821b899dbe67a5d8cf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9affade730b59821b899dbe67a5d8cf6">&#9670;&#160;</a></span>vector() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9affade730b59821b899dbe67a5d8cf6">&#9670;&#160;</a></span>vector() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -370,12 +396,91 @@ template&lt;typename InputIt&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00077">77</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00079">79</a>.</p>
 
 </div>
 </div>
-<a id="a8f9f7d4918bce014554618a4dddf6ffe" name="a8f9f7d4918bce014554618a4dddf6ffe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f9f7d4918bce014554618a4dddf6ffe">&#9670;&#160;</a></span>~vector()</h2>
+<a id="a9f5fa5e136c02275a09a8f180030dda3" name="a9f5fa5e136c02275a09a8f180030dda3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f5fa5e136c02275a09a8f180030dda3">&#9670;&#160;</a></span>vector() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;<a class="el" href="classvector.html">::vector</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktorius, sukuriantis vektorių su nurodytu elementų skaičiumi, bei visus elementus inicializuojant duota verte. </p>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>Elementų skaičius </td></tr>
+    <tr><td class="paramname">value</td><td>Inicializacijos reikšmė kiekvienam elementui </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00093">93</a>.</p>
+
+</div>
+</div>
+<a id="aea38932d2511a217f066defa26ac6bcf" name="aea38932d2511a217f066defa26ac6bcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea38932d2511a217f066defa26ac6bcf">&#9670;&#160;</a></span>vector() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;<a class="el" href="classvector.html">::vector</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>init</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicializavimo sąrašo konstruktorius. </p>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>elementų sąrašas </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00111">111</a>.</p>
+
+</div>
+</div>
+<a id="a8c23ee909052731c8d64bb61a61e2187" name="a8c23ee909052731c8d64bb61a61e2187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c23ee909052731c8d64bb61a61e2187">&#9670;&#160;</a></span>~vector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -394,18 +499,151 @@ template&lt;typename T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruktorius – sunaikina visus elementus ir atlaisvina atmintį </p>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00151">151</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Metodų Dokumentacija</h2>
+<a id="a398a2b09b05583c2996193f9e01bd4e9" name="a398a2b09b05583c2996193f9e01bd4e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a398a2b09b05583c2996193f9e01bd4e9">&#9670;&#160;</a></span>at() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>idx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Destruktorius, atlaisvina atmintį </p>
+<p>Pasiekia elementą su ribų tikrinimu. </p>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>Elemento indeksas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Gražina</dt><dd>Nuoroda į elementą </dd></dl>
+<dl class="exception"><dt>Išimtys</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>jei indeksas neleistinas </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00123">123</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00286">286</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Metodų Dokumentacija</h2>
+<a id="a1058a37c55edb325da46bef753cc38ee" name="a1058a37c55edb325da46bef753cc38ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1058a37c55edb325da46bef753cc38ee">&#9670;&#160;</a></span>at() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; <a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9377c6bbfed7ebf5377b92665c0c09e4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>idx</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00295">295</a>.</p>
+
+</div>
+</div>
+<a id="a9dad8d8ef4dd386e12411d2092a0a0b7" name="a9dad8d8ef4dd386e12411d2092a0a0b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dad8d8ef4dd386e12411d2092a0a0b7">&#9670;&#160;</a></span>back() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Grąžina nuorodą į paskutinį elementą </p>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00334">334</a>.</p>
+
+</div>
+</div>
+<a id="ac9692383f8ed523ae2772e5ab2568f3a" name="ac9692383f8ed523ae2772e5ab2568f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9692383f8ed523ae2772e5ab2568f3a">&#9670;&#160;</a></span>back() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; <a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00335">335</a>.</p>
+
+</div>
+</div>
 <a id="a833f9a53aa93ffa55cef4f06019474df" name="a833f9a53aa93ffa55cef4f06019474df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a833f9a53aa93ffa55cef4f06019474df">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
 
@@ -431,7 +669,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00250">250</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00309">309</a>.</p>
 
 </div>
 </div>
@@ -463,7 +701,7 @@ template&lt;typename T&gt; </div>
 <p>Gražina iteratorių į pirmą elementą </p>
 <dl class="section return"><dt>Gražina</dt><dd>Nuoroda į pirmą elementą </dd></dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00249">249</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00308">308</a>.</p>
 
 </div>
 </div>
@@ -492,10 +730,10 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Grąžina talpą </p>
+<p>Grąžina šiuo metu rezervuotą talpą </p>
 <dl class="section return"><dt>Gražina</dt><dd>Dabartinė talpa </dd></dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00229">229</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00264">264</a>.</p>
 
 </div>
 </div>
@@ -526,7 +764,68 @@ template&lt;typename T&gt; </div>
 
 <p>Išvalo visus elementus. </p>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00196">196</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00231">231</a>.</p>
+
+</div>
+</div>
+<a id="af7f43f8820549fed15cace76e9bb376f" name="af7f43f8820549fed15cace76e9bb376f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f43f8820549fed15cace76e9bb376f">&#9670;&#160;</a></span>data() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T * <a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00316">316</a>.</p>
+
+</div>
+</div>
+<a id="a514c0ecd5e8e7e317a61f159a75f6e2a" name="a514c0ecd5e8e7e317a61f159a75f6e2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a514c0ecd5e8e7e317a61f159a75f6e2a">&#9670;&#160;</a></span>data() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * <a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Grąžina raw pointer į vidinį buferį </p>
+<dl class="section return"><dt>Gražina</dt><dd>pointer į pirmą elementą (arba nullptr jei tuščias) </dd></dl>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00315">315</a>.</p>
 
 </div>
 </div>
@@ -558,7 +857,7 @@ template&lt;typename T&gt; </div>
 <p>Patikrina, ar vektorius yra tuščias. </p>
 <dl class="section return"><dt>Gražina</dt><dd><code>true</code>, jei tuščias, kitu atveju <code>false</code> </dd></dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00235">235</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00270">270</a>.</p>
 
 </div>
 </div>
@@ -587,7 +886,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00257">257</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00323">323</a>.</p>
 
 </div>
 </div>
@@ -619,7 +918,7 @@ template&lt;typename T&gt; </div>
 <p>Gražina iteratorių į paskutinį elementą </p>
 <dl class="section return"><dt>Gražina</dt><dd>Nuoroda į paskutinį elementą </dd></dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00256">256</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00322">322</a>.</p>
 
 </div>
 </div>
@@ -652,7 +951,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Pašalina elementų intervalą [first, last) </p>
+<p>Pašalina elementų intervalą (first, last) </p>
 <dl class="params"><dt>Parametrai</dt><dd>
   <table class="params">
     <tr><td class="paramname">first</td><td>Iteratorius į pirmą šalinamą elementą </td></tr>
@@ -662,7 +961,67 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="section return"><dt>Gražina</dt><dd>Iteratorius į vietą, kurioje buvo pirmas pašalintas elementas </dd></dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00207">207</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00242">242</a>.</p>
+
+</div>
+</div>
+<a id="a6755a5602f2255eb2539eec47a5478d1" name="a6755a5602f2255eb2539eec47a5478d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6755a5602f2255eb2539eec47a5478d1">&#9670;&#160;</a></span>front() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Grąžina nuorodą į pirmą elementą </p>
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00328">328</a>.</p>
+
+</div>
+</div>
+<a id="a3cc20d1d11cbdfdb857d348a113c4aa9" name="a3cc20d1d11cbdfdb857d348a113c4aa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc20d1d11cbdfdb857d348a113c4aa9">&#9670;&#160;</a></span>front() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; <a class="el" href="classcustm_1_1vector.html">custm::vector</a>&lt; T &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00329">329</a>.</p>
 
 </div>
 </div>
@@ -700,7 +1059,7 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="section return"><dt>Gražina</dt><dd>Nuoroda į šį vektorių </dd></dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00091">91</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00119">119</a>.</p>
 
 </div>
 </div>
@@ -738,7 +1097,7 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="section return"><dt>Gražina</dt><dd>Nuoroda į šį vektorių </dd></dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00106">106</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00134">134</a>.</p>
 
 </div>
 </div>
@@ -776,7 +1135,7 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="section return"><dt>Gražina</dt><dd>Nuoroda į elementą </dd></dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00242">242</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00277">277</a>.</p>
 
 </div>
 </div>
@@ -805,7 +1164,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00243">243</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00278">278</a>.</p>
 
 </div>
 </div>
@@ -842,7 +1201,7 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00145">145</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00180">180</a>.</p>
 
 </div>
 </div>
@@ -879,7 +1238,7 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00132">132</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00167">167</a>.</p>
 
 </div>
 </div>
@@ -916,7 +1275,7 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00158">158</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00193">193</a>.</p>
 
 </div>
 </div>
@@ -953,7 +1312,7 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00176">176</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00211">211</a>.</p>
 
 </div>
 </div>
@@ -985,12 +1344,12 @@ template&lt;typename T&gt; </div>
 <p>Grąžina elementų skaičių </p>
 <dl class="section return"><dt>Gražina</dt><dd>Dabartinis dydis </dd></dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00223">223</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8hpp_source.html">Vector.hpp</a> eilutėje <a class="el" href="_vector_8hpp_source.html#l00258">258</a>.</p>
 
 </div>
 </div>
 <hr/>Dokumentacija šiai klasei sugeneruota iš šio failo:<ul>
-<li>C:/Users/Adomas/source/repos/OOP-Vector/include/<a class="el" href="_vector_8hpp_source.html">Vector.hpp</a></li>
+<li>C:/Users/Administrator/source/repos/C++/OOP-Vector/include/<a class="el" href="_vector_8hpp_source.html">Vector.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

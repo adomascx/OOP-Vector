@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['size_0',['size',['../classcustm_1_1vector.html#a5f2154a77cd8974769d7c0fb2e46aabd',1,'custm::vector::size()'],['../classvector.html#a5f2154a77cd8974769d7c0fb2e46aabd',1,'vector::size()']]]
+  ['operator_3d_0',['operator=',['../classcustm_1_1vector.html#aab8ab1c39f38a62cb8609c70a2d32dc4',1,'custm::vector::operator=(const vector &amp;other)'],['../classcustm_1_1vector.html#a37e2ffb61958d4d4c1ebe003929b8725',1,'custm::vector::operator=(vector &amp;&amp;other) noexcept'],['../classvector.html#aab8ab1c39f38a62cb8609c70a2d32dc4',1,'vector::operator=(const vector &amp;other)'],['../classvector.html#a37e2ffb61958d4d4c1ebe003929b8725',1,'vector::operator=(vector &amp;&amp;other) noexcept']]],
+  ['operator_5b_5d_1',['operator[]',['../classcustm_1_1vector.html#a5cc206481dd4c2822f3ca76fe4d11ea8',1,'custm::vector::operator[](size_type idx)'],['../classcustm_1_1vector.html#a98dc121d7d1a4e74486c943128fc3c34',1,'custm::vector::operator[](size_type idx) const noexcept'],['../classvector.html#a5cc206481dd4c2822f3ca76fe4d11ea8',1,'vector::operator[](size_type idx)'],['../classvector.html#a98dc121d7d1a4e74486c943128fc3c34',1,'vector::operator[](size_type idx) const noexcept']]]
 ];
