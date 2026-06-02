@@ -128,7 +128,7 @@
 - **begin() / end()**  
   Grąžina iteratorius į atitinkamai pirmą elementą ir (paskutinio elemento + 1) poziciją, leidžiančius naudoti vektorių su standartinėmis iteratorių operacijomis, kaip – pereiti per visus elementus.
 
-Detalesnę informaciją apie kiekvieną funkciją galite rasti [dokumentacijoje](docs/html/index.html).
+Detalesnę informaciją apie kiekvieną funkciją galite rasti [dokumentacijoje](https://adomascx.github.io/OOP-Vector/html/index.html).
 
 ## Unit Testai
 
